@@ -1,0 +1,597 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, geometry, xcolor, enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+
+\title{\textbf{Fluid Mechanics Assignment Solutions}}
+\author{Minhajul Abedin \\Roll: MUH2106059M  | Session: 2020-21 \\ Department of Applied Mathematics \\ Noakhali Science and Technology University}
+
+\begin{document}
+\maketitle
+
+\section*{Solutions}
+\hrulefill
+
+\subsection*{\textbf{Question 1(a):}}
+\textbf{Explain dimensionless analysis. Write down the importance of dimensional quantities.}
+
+\textbf{Dimensionless Analysis:} [cite: 3]
+Dimensionless analysis is a mathematical technique used to reduce the number of relevant variables in a physical problem by combining them into dimensionless groups or numbers. The core principle is dimensional homogeneity, which states that any physically meaningful equation must have the same dimensions on both sides. By analyzing the dimensions (like mass, length, time) of the variables involved, we can form these dimensionless products (often called $\Pi$ groups).
+
+\textbf{Importance:}
+\begin{itemize}
+    \item \textbf{Simplification:} It reduces the complexity of a problem by decreasing the number of variables that need to be considered, making it easier to analyze and solve.
+    \item \textbf{Experimental Design:} It provides a framework for designing experiments. By keeping the dimensionless numbers the same between a small-scale model and a full-scale prototype (a concept called dynamic similarity), results from model testing can be accurately scaled up. This saves significant time and cost.
+    \item \textbf{Universality:} The relationships between dimensionless groups are independent of the system of units used, providing a universal way to present results.
+    \item \textbf{Insight:} It helps in understanding the fundamental relationships between physical quantities and identifying the dominant physical phenomena (e.g., whether viscous or inertial forces are more important).
+\end{itemize}
+\hrulefill
+
+\subsection*{\textbf{Question 1(b):}}
+\textbf{Write down the advantages and disadvantages of dimensionless numbers.} [cite: 4]
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item \textbf{Reduces Variables:} The number of variables in a problem is reduced to a smaller number of dimensionless groups, simplifying analysis.
+    \item \textbf{Enables Scaling:} They are fundamental to the principles of similitude and model testing, allowing data from small-scale models to be applied to large-scale prototypes.
+    \item \textbf{Generalizes Results:} Expressing results in terms of dimensionless numbers makes them independent of the specific units used (SI, Imperial, etc.), giving them universal applicability.
+    \item \textbf{Identifies Dominant Forces:} The magnitude of a dimensionless number often indicates the relative importance of different physical forces (e.g., Reynolds number compares inertial and viscous forces).
+\end{itemize}
+
+\textbf{Disadvantages:}
+\begin{itemize}
+    \item \textbf{No Functional Form:} Dimensional analysis can identify the relevant dimensionless groups, but it cannot determine the exact functional relationship between them. This must be found through experiments or more detailed theory.
+    \item \textbf{Requires Correct Variable Identification:} The method's success depends entirely on correctly identifying all the physical variables that influence the problem. Omitting a relevant variable will lead to an incorrect or incomplete result.
+    \item \textbf{Obscures Physical Meaning:} Sometimes, the physical meaning of the dimensionless groups can be less intuitive than that of the original variables.
+\end{itemize}
+\hrulefill
+
+\subsection*{\textbf{Question 2(a):}}
+\textbf{Define the dimensionless numbers: Froude number, Eckert number, Prandtl number, Euler number and Weissenberg number.} [cite: 6]
+
+\begin{itemize}
+    \item \textbf{Froude Number ($Fr$):} The ratio of inertial forces to gravitational forces. It is important in flows with a free surface, such as open-channel flow or ship hydrodynamics.
+    $$ Fr = \frac{\text{Inertial Force}}{\text{Gravitational Force}} = \frac{V}{\sqrt{gL}} $$
+    where $V$ is velocity, $g$ is gravitational acceleration, and $L$ is a characteristic length.
+
+    \item \textbf{Eckert Number ($Ec$):} The ratio of the kinetic energy of the flow to the boundary layer enthalpy difference. It is used in high-speed compressible flows where viscous dissipation is significant.
+    $$ Ec = \frac{\text{Kinetic Energy}}{\text{Enthalpy}} = \frac{V^2}{c_p \Delta T} $$
+    where $c_p$ is the specific heat at constant pressure and $\Delta T$ is the temperature difference.
+
+    \item \textbf{Prandtl Number ($Pr$):} The ratio of momentum diffusivity (kinematic viscosity) to thermal diffusivity. It compares the thickness of the velocity boundary layer to the thermal boundary layer.
+    $$ Pr = \frac{\text{Momentum Diffusivity}}{\text{Thermal Diffusivity}} = \frac{\nu}{\alpha} = \frac{\mu c_p}{k} $$
+    where $\nu$ is kinematic viscosity, $\alpha$ is thermal diffusivity, $\mu$ is dynamic viscosity, and $k$ is thermal conductivity.
+
+    \item \textbf{Euler Number ($Eu$):} The ratio of pressure forces to inertial forces. It is used in problems where pressure difference is a key variable, such as flow through orifices or around submerged bodies.
+    $$ Eu = \frac{\text{Pressure Force}}{\text{Inertial Force}} = \frac{\Delta P}{\rho V^2} $$
+    where $\Delta P$ is the pressure difference and $\rho$ is the fluid density.
+
+    \item \textbf{Weissenberg Number ($Wi$):} The ratio of elastic forces to viscous forces. It is used in the study of viscoelastic flows, characterizing the degree of nonlinearity.
+    $$ Wi = \lambda \dot{\gamma} $$
+    where $\lambda$ is the relaxation time of the fluid and $\dot{\gamma}$ is the shear rate.
+\end{itemize}
+\hrulefill
+
+\subsection*{\textbf{Question 2(b):}}
+\textbf{Write down units and dimensions of the following terms: Velocity, acceleration, force, energy, power, pressure, density, viscosity and weight.} [cite: 7]
+
+The fundamental dimensions are Mass (M), Length (L), and Time (T).
+
+\begin{center}
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Term} & \textbf{SI Unit} & \textbf{Dimension} \\
+\hline
+Velocity & m/s & $LT^{-1}$ \\
+Acceleration & m/s$^2$ & $LT^{-2}$ \\
+Force & Newton (N) or kg$\cdot$m/s$^2$ & $MLT^{-2}$ \\
+Energy & Joule (J) or N$\cdot$m & $ML^2T^{-2}$ \\
+Power & Watt (W) or J/s & $ML^2T^{-3}$ \\
+Pressure & Pascal (Pa) or N/m$^2$ & $ML^{-1}T^{-2}$ \\
+Density & kg/m$^3$ & $ML^{-3}$ \\
+Viscosity (dynamic) & Pa$\cdot$s or kg/(m$\cdot$s) & $ML^{-1}T^{-1}$ \\
+Weight & Newton (N) & $MLT^{-2}$ \\
+\hline
+\end{tabular}
+\end{center}
+\hrulefill
+
+\subsection*{\textbf{Question 3(a):}}
+\textbf{What is dimensional homogeneity? Explain with example.} [cite: 9]
+
+\textbf{Dimensional Homogeneity} is the principle that an equation expressing a physical relationship between quantities must be valid regardless of the system of units used. For this to be true, all additive terms in the equation must have the same physical dimensions.
+
+\textbf{Example: Bernoulli's Equation}
+For an incompressible, inviscid fluid in steady flow, Bernoulli's equation is:
+$$ P + \frac{1}{2}\rho V^2 + \rho g h = \text{constant} $$
+Let's check the dimensions of each term:
+\begin{itemize}
+    \item Pressure ($P$): $[P] = \frac{\text{Force}}{\text{Area}} = \frac{MLT^{-2}}{L^2} = ML^{-1}T^{-2}$
+    \item Dynamic Pressure ($\frac{1}{2}\rho V^2$): $[\rho V^2] = (ML^{-3})(LT^{-1})^2 = (ML^{-3})(L^2T^{-2}) = ML^{-1}T^{-2}$
+    \item Hydrostatic Pressure ($\rho g h$): $[\rho g h] = (ML^{-3})(LT^{-2})(L) = ML^{-1}T^{-2}$
+\end{itemize}
+Since all three terms on the left side have the same dimensions of $ML^{-1}T^{-2}$, the equation is dimensionally homogeneous. This confirms that it is a physically meaningful equation.
+\hrulefill
+
+\subsection*{\textbf{Question 3(b):}}
+\textbf{Explain various techniques to find the dimensional quantities.} [cite: 10]
+
+The primary technique to find the relationships between physical quantities through their dimensions is \textbf{Dimensional Analysis}. The two main methods used are:
+
+\begin{enumerate}
+    \item \textbf{Rayleigh's Method:} This method is used when the dependent variable is a function of a few (typically 3-4) independent variables.
+    \begin{itemize}
+        \item \textbf{Step 1:} Express the dependent variable as a product of the independent variables raised to unknown powers. For example, if $X$ depends on $X_1, X_2, X_3$, we write $X = k X_1^a X_2^b X_3^c$, where $k$ is a dimensionless constant.
+        \item \textbf{Step 2:} Substitute the dimensions (in terms of M, L, T, etc.) for all variables in the equation.
+        \item \textbf{Step 3:} Apply the principle of dimensional homogeneity by equating the powers of each fundamental dimension on both sides of the equation.
+        \item \textbf{Step 4:} Solve the resulting system of linear algebraic equations to find the values of the exponents $a, b, c$.
+    \end{itemize}
+
+    \item \textbf{Buckingham's $\Pi$ Theorem:} This is a more general and systematic method, especially for problems with many variables.
+    \begin{itemize}
+        \item \textbf{Theorem Statement:} If a physical phenomenon involves $n$ variables that can be described by $m$ fundamental dimensions, then the variables can be arranged into $n-m$ independent dimensionless groups (called $\Pi$ terms).
+        \item \textbf{Step 1:} List all $n$ variables involved and their dimensions.
+        \item \textbf{Step 2:} Determine the number of fundamental dimensions, $m$. The number of $\Pi$ terms will be $n-m$.
+        \item \textbf{Step 3:} Choose $m$ "repeating variables" from the list. These variables should be independent and together contain all $m$ fundamental dimensions.
+        \item \textbf{Step 4:} Form each $\Pi$ term by taking one of the remaining non-repeating variables and combining it with the repeating variables raised to unknown powers.
+        \item \textbf{Step 5:} Solve for the exponents in each $\Pi$ term by making the group dimensionless.
+        \item \textbf{Step 6:} Express the final relationship as a function of the $\Pi$ terms, such as $\Pi_1 = f(\Pi_2, \Pi_3, \dots, \Pi_{n-m})$.
+    \end{itemize}
+\end{enumerate}
+\hrulefill
+
+\subsection*{\textbf{Question 4(a):}}
+\textbf{Compare between Rayleigh's method and Buckingham's method.} [cite: 12]
+
+\begin{center}
+\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+\hline
+\textbf{Rayleigh's Method} & \textbf{Buckingham's $\Pi$ Method} \\
+\hline
+Expresses a functional relationship as an exponential equation. & Expresses the relationship in terms of dimensionless groups ($\Pi$ terms). \\
+\hline
+Becomes cumbersome and difficult if the number of variables exceeds the number of fundamental dimensions by more than one. & Is more general and can handle a large number of variables systematically. \\
+\hline
+It provides the final equation with unknown exponents directly. & It provides the dimensionless groups, and the final relationship must be written as a function, e.g., $\Pi_1 = f(\Pi_2, \dots)$. \\
+\hline
+Does not explicitly tell you the number of dimensionless groups to expect. & Clearly determines the number of dimensionless groups to be formed ($n-m$). \\
+\hline
+Best suited for simpler problems. & More powerful and suitable for complex physical problems. \\
+\hline
+\end{tabular}
+\end{center}
+\hrulefill
+
+\subsection*{\textbf{Question 4(b):}}
+\textbf{Prove that the resistance R to the motion of a sphere of diameter D moving with a uniform velocity V through a real fluid having density $\rho$ and viscosity $\mu$ is given by $R=\rho D^{2}V^{2}f\left(\frac{\mu}{\rho VD}\right)$.} [cite: 13, 14, 15]
+
+We will use Buckingham's $\Pi$ theorem.
+
+\begin{enumerate}
+    \item \textbf{List variables and dimensions:}
+    The resistance $R$ is a function of $D, V, \rho, \mu$. So, $R = f(D, V, \rho, \mu)$.
+    \begin{itemize}
+        \item Resistance, $R = [MLT^{-2}]$
+        \item Diameter, $D = [L]$
+        \item Velocity, $V = [LT^{-1}]$
+        \item Density, $\rho = [ML^{-3}]$
+        \item Viscosity, $\mu = [ML^{-1}T^{-1}]$
+    \end{itemize}
+    Total number of variables, $n=5$.
+    
+    \item \textbf{Determine number of $\Pi$ terms:}
+    The fundamental dimensions are M, L, T. So, $m=3$.
+    Number of dimensionless $\Pi$ terms = $n-m = 5-3 = 2$.
+    The relationship can be expressed as $f(\Pi_1, \Pi_2) = 0$.
+
+    \item \textbf{Choose repeating variables:}
+    We need to choose $m=3$ repeating variables that contain all fundamental dimensions and do not form a dimensionless group among themselves. Let's choose $\rho, V, D$.
+
+    \item \textbf{Form $\Pi$ terms:}
+    \textbf{First term, $\Pi_1$ (with $R$):}
+    $$ \Pi_1 = \rho^a V^b D^c R $$
+    Writing dimensions:
+    $$ [M^0L^0T^0] = (ML^{-3})^a (LT^{-1})^b (L)^c (MLT^{-2}) $$
+    Equating powers of M, L, T:
+    \begin{itemize}
+        \item M: $0 = a + 1 \implies a = -1$
+        \item T: $0 = -b - 2 \implies b = -2$
+        \item L: $0 = -3a + b + c + 1 = -3(-1) + (-2) + c + 1 = 3 - 2 + c + 1 = 2+c \implies c = -2$
+    \end{itemize}
+    So, $\Pi_1 = \rho^{-1} V^{-2} D^{-2} R = \frac{R}{\rho V^2 D^2}$.
+    
+    \textbf{Second term, $\Pi_2$ (with $\mu$):}
+    $$ \Pi_2 = \rho^x V^y D^z \mu $$
+    Writing dimensions:
+    $$ [M^0L^0T^0] = (ML^{-3})^x (LT^{-1})^y (L)^z (ML^{-1}T^{-1}) $$
+    Equating powers of M, L, T:
+    \begin{itemize}
+        \item M: $0 = x + 1 \implies x = -1$
+        \item T: $0 = -y - 1 \implies y = -1$
+        \item L: $0 = -3x + y + z - 1 = -3(-1) + (-1) + z - 1 = 3 - 1 + z - 1 = 1+z \implies z = -1$
+    \end{itemize}
+    So, $\Pi_2 = \rho^{-1} V^{-1} D^{-1} \mu = \frac{\mu}{\rho VD}$. (Note: This is the inverse of the Reynolds number, $Re$).
+
+    \item \textbf{Express final relationship:}
+    We have $\Pi_1 = f(\Pi_2)$.
+    $$ \frac{R}{\rho D^2 V^2} = f\left(\frac{\mu}{\rho VD}\right) $$
+    Rearranging for $R$:
+    $$ \mathbf{R = \rho D^2 V^2 f\left(\frac{\mu}{\rho VD}\right)} $$
+    This proves the required relationship.
+\end{enumerate}
+\hrulefill
+
+\subsection*{\textbf{Question 5(a):}}
+\textbf{Prove that the discharge Q over a spillway is given by the relation $Q=VD^{2}f\left(\frac{\sqrt{gD}}{V},\frac{H}{D}\right)$.} [cite: 17, 18]
+
+Let's assume the discharge $Q$ depends on the velocity of approach $V$, a characteristic dimension of the spillway $D$, the head of water $H$, and the acceleration due to gravity $g$. Thus, $Q = \phi(V, D, H, g)$.
+
+\begin{enumerate}
+    \item \textbf{List variables and dimensions:}
+    \begin{itemize}
+        \item Discharge, $Q = [L^3T^{-1}]$
+        \item Velocity, $V = [LT^{-1}]$
+        \item Dimension, $D = [L]$
+        \item Head, $H = [L]$
+        \item Gravity, $g = [LT^{-2}]$
+    \end{itemize}
+    Total number of variables, $n=5$.
+    
+    \item \textbf{Determine number of $\Pi$ terms:}
+    The fundamental dimensions involved are L, T. So, $m=2$.
+    Number of dimensionless $\Pi$ terms = $n-m = 5-2 = 3$.
+    
+    \item \textbf{Choose repeating variables:}
+    We need $m=2$ repeating variables. Let's choose $V$ and $D$.
+    
+    \item \textbf{Form $\Pi$ terms:}
+    \textbf{First term, $\Pi_1$ (with $Q$):}
+    $$ \Pi_1 = V^a D^b Q $$
+    $$ [L^0T^0] = (LT^{-1})^a (L)^b (L^3T^{-1}) = L^{a+b+3} T^{-a-1} $$
+    \begin{itemize}
+        \item T: $-a-1 = 0 \implies a = -1$
+        \item L: $a+b+3 = 0 \implies -1+b+3 = 0 \implies b = -2$
+    \end{itemize}
+    So, $\Pi_1 = V^{-1} D^{-2} Q = \frac{Q}{VD^2}$.
+    
+    \textbf{Second term, $\Pi_2$ (with $H$):}
+    $$ \Pi_2 = V^a D^b H $$
+    $$ [L^0T^0] = (LT^{-1})^a (L)^b (L) = L^{a+b+1} T^{-a} $$
+    \begin{itemize}
+        \item T: $-a = 0 \implies a = 0$
+        \item L: $a+b+1 = 0 \implies 0+b+1 = 0 \implies b = -1$
+    \end{itemize}
+    So, $\Pi_2 = D^{-1} H = \frac{H}{D}$.
+    
+    \textbf{Third term, $\Pi_3$ (with $g$):}
+    $$ \Pi_3 = V^a D^b g $$
+    $$ [L^0T^0] = (LT^{-1})^a (L)^b (LT^{-2}) = L^{a+b+1} T^{-a-2} $$
+    \begin{itemize}
+        \item T: $-a-2 = 0 \implies a = -2$
+        \item L: $a+b+1 = 0 \implies -2+b+1 = 0 \implies b = 1$
+    \end{itemize}
+    So, $\Pi_3 = V^{-2} D^{1} g = \frac{gD}{V^2}$. This is the square of the inverse of the Froude number.
+
+    \item \textbf{Express final relationship:}
+    We have $\Pi_1 = \phi'(\Pi_2, \Pi_3)$.
+    $$ \frac{Q}{VD^2} = \phi'\left(\frac{H}{D}, \frac{gD}{V^2}\right) $$
+    The function can be expressed in different forms. Since $\frac{\sqrt{gD}}{V}$ is also a dimensionless number derived from $\Pi_3$, we can write:
+    $$ \frac{Q}{VD^2} = f\left(\frac{H}{D}, \frac{\sqrt{gD}}{V}\right) $$
+    Rearranging gives:
+    $$ \mathbf{Q=VD^{2}f\left(\frac{\sqrt{gD}}{V},\frac{H}{D}\right)} $$
+\end{enumerate}
+\hrulefill
+
+\subsection*{\textbf{Question 5(b):}}
+\textbf{Show that $Q=\frac{d^{5/2}P^{1/2}}{\rho^{1/2}}\phi\left(\frac{dP^{1/2}\rho^{1/2}}{\mu}\right)$} [cite: 19, 20, 21]
+
+Note: The target equation appears to be dimensionally inconsistent. A derivation using standard dimensional analysis leads to a slightly different result, which is likely the intended relationship. Let us assume $P$ is pressure difference.
+
+We are given $Q = f(d, P, \rho, \mu)$.
+\begin{enumerate}
+    \item \textbf{Variables and Dimensions:}
+    \begin{itemize}
+        \item Discharge, $Q = [L^3T^{-1}]$
+        \item Dimension, $d = [L]$
+        \item Pressure diff., $P = [ML^{-1}T^{-2}]$
+        \item Density, $\rho = [ML^{-3}]$
+        \item Viscosity, $\mu = [ML^{-1}T^{-1}]$
+    \end{itemize}
+    $n=5$ variables, $m=3$ fundamental dimensions (M, L, T). Number of $\Pi$ terms = $n-m=2$.
+    
+    \item \textbf{Repeating variables:} Let's choose $d, P, \rho$.
+    
+    \item \textbf{Form $\Pi$ terms:}
+    \textbf{$\Pi_1$ term (with $Q$):}
+    $$ \Pi_1 = d^a P^b \rho^c Q $$
+    $$ [M^0L^0T^0] = (L)^a (ML^{-1}T^{-2})^b (ML^{-3})^c (L^3T^{-1}) $$
+    \begin{itemize}
+        \item M: $b+c = 0 \implies c = -b$
+        \item T: $-2b-1 = 0 \implies b = -1/2$. So, $c=1/2$.
+        \item L: $a-b-3c+3=0 \implies a - (-1/2) - 3(1/2) + 3 = 0 \implies a+1/2-3/2+3=0 \implies a-1+3=0 \implies a=-2$.
+    \end{itemize}
+    So, $\Pi_1 = d^{-2} P^{-1/2} \rho^{1/2} Q = \frac{Q\sqrt{\rho}}{d^2\sqrt{P}}$.
+    
+    \textbf{$\Pi_2$ term (with $\mu$):}
+    $$ \Pi_2 = d^x P^y \rho^z \mu $$
+    $$ [M^0L^0T^0] = (L)^x (ML^{-1}T^{-2})^y (ML^{-3})^z (ML^{-1}T^{-1}) $$
+    \begin{itemize}
+        \item M: $y+z+1=0 \implies z = -y-1$
+        \item T: $-2y-1=0 \implies y = -1/2$. So, $z=-(-1/2)-1 = -1/2$.
+        \item L: $x-y-3z-1=0 \implies x - (-1/2) - 3(-1/2) - 1 = 0 \implies x+1/2+3/2-1=0 \implies x+2-1=0 \implies x=-1$.
+    \end{itemize}
+    So, $\Pi_2 = d^{-1} P^{-1/2} \rho^{-1/2} \mu = \frac{\mu}{d\sqrt{P\rho}}$.
+    
+    \item \textbf{Final Relationship:}
+    We can write $\Pi_1 = \phi'(\Pi_2)$.
+    $$ \frac{Q\sqrt{\rho}}{d^2\sqrt{P}} = \phi'\left(\frac{\mu}{d\sqrt{P\rho}}\right) $$
+    To match the form in the question, we can take the reciprocal of the argument:
+    $$ \frac{Q\sqrt{\rho}}{d^2\sqrt{P}} = \phi\left(\frac{d\sqrt{P\rho}}{\mu}\right) $$
+    Solving for $Q$:
+    $$ Q = \frac{d^2 P^{1/2}}{\rho^{1/2}}\phi\left(\frac{d\sqrt{P\rho}}{\mu}\right) $$
+    This derived expression is dimensionally correct. The power of $d$ is 2, not 5/2 as stated in the question , which suggests a typo in the original problem statement.
+\end{enumerate}
+\hrulefill
+
+\subsection*{\textbf{Question 6(a):}}
+\textbf{Explain the principle of dynamic similarity. Write down the importance of Reynolds number and Prandtl number.} [cite: 23]
+
+\textbf{Principle of Dynamic Similarity:}
+Dynamic similarity is a condition for comparing fluid flows. Two flows are said to be dynamically similar if:
+\begin{enumerate}
+    \item \textbf{They are geometrically similar:} The model and the prototype have the same shape, and all linear dimensions of the model are related to the corresponding dimensions of the prototype by a constant scale factor.
+    \item \textbf{They are kinematically similar:} The velocity vectors at corresponding points in the two flows are in the same direction and are related by a constant scale factor. This implies that the streamlines patterns are geometrically similar.
+    \item \textbf{They are dynamically similar:} The ratios of all corresponding forces (e.g., inertial, viscous, gravitational, pressure) at corresponding points are the same in both flows.
+\end{enumerate}
+This last condition implies that all relevant dimensionless numbers (like Reynolds, Froude, Mach numbers) must be identical for the model and the prototype. When dynamic similarity is achieved, the results from a model test can be quantitatively scaled to predict the performance of the full-scale prototype.
+
+\textbf{Importance of Reynolds Number ($Re$):}
+The Reynolds number is the ratio of inertial forces to viscous forces: $Re = \frac{\rho V L}{\mu}$.
+\begin{itemize}
+    \item It is the most important dimensionless number in fluid mechanics.
+    \item It determines the nature of the flow. For flow in a pipe, $Re < 2300$ typically indicates \textbf{laminar flow} (smooth and orderly), while $Re > 4000$ indicates \textbf{turbulent flow} (chaotic and irregular).
+    \item It is crucial for ensuring dynamic similarity in experiments where viscous effects are dominant (e.g., flow around airplanes, submarines, or in pipes).
+\end{itemize}
+
+\textbf{Importance of Prandtl Number ($Pr$):}
+The Prandtl number is the ratio of momentum diffusivity to thermal diffusivity: $Pr = \frac{\nu}{\alpha}$.
+\begin{itemize}
+    \item It is crucial in problems involving heat transfer.
+    \item It provides a measure of the relative effectiveness of momentum and energy transport by diffusion in the fluid.
+    \item It relates the thickness of the velocity boundary layer ($\delta$) to the thickness of the thermal boundary layer ($\delta_T$). For example, $\delta \approx \delta_T$ if $Pr=1$. For gases like air, $Pr \approx 0.7$. For oils, $Pr \gg 1$. For liquid metals, $Pr \ll 1$.
+\end{itemize}
+\hrulefill
+
+\subsection*{\textbf{Question 7(a):}}
+\textbf{Define various types of boundary layer thickness such as: Displacement thickness, Momentum thickness, Energy thickness or Dissipation energy thickness or Kinetic energy thickness and Drag and Lift.} [cite: 25]
+
+In a boundary layer, the fluid velocity is reduced from the free-stream velocity $U$ to zero at the wall. The following definitions quantify the effects of this velocity deficit.
+
+\begin{itemize}
+    \item \textbf{Displacement Thickness ($\delta^*$ or $\delta_1$):} The distance by which the external streamlines are displaced outwards due to the reduction in flow rate within the boundary layer. It is the thickness of a layer of fluid with velocity $U$ that would have the same flow rate as the deficit in the boundary layer.
+    $$ \delta^* = \int_0^\infty \left(1 - \frac{u(y)}{U}\right) dy $$
+    \item \textbf{Momentum Thickness ($\theta$ or $\delta_2$):} The thickness of a layer of fluid with velocity $U$ that would have the same momentum flux as the deficit of momentum flux in the boundary layer. It is directly related to the drag force on the surface.
+    $$ \theta = \int_0^\infty \frac{u(y)}{U}\left(1 - \frac{u(y)}{U}\right) dy $$
+    \item \textbf{Energy Thickness ($\delta_E$ or $\delta_3$):} The thickness of a layer of fluid with velocity $U$ that would have the same kinetic energy flux as the deficit of kinetic energy flux in the boundary layer.
+    $$ \delta_E = \int_0^\infty \frac{u(y)}{U}\left(1 - \left(\frac{u(y)}{U}\right)^2\right) dy $$
+    \item \textbf{Drag and Lift:} These are the forces exerted by a fluid on a body moving through it.
+    \begin{itemize}
+        \item \textbf{Drag} is the component of the force that is parallel to the direction of the oncoming flow. It is caused by friction (viscous drag) and pressure differences (pressure or form drag).
+        \item \textbf{Lift} is the component of the force that is perpendicular to the direction of the oncoming flow. It is generated by creating a pressure difference between the upper and lower surfaces of the body (e.g., an airfoil).
+    \end{itemize}
+\end{itemize}
+\hrulefill
+
+\subsection*{\textbf{Question 7(b):}}
+\textbf{What are the limitations of Navier-Stokes equations?} [cite: 26]
+
+The Navier-Stokes (N-S) equations are the cornerstone of fluid mechanics, but they have several limitations:
+\begin{itemize}
+    \item \textbf{Analytical Difficulty:} They are a set of coupled, non-linear partial differential equations. Exact analytical solutions are known for only a very limited number of simple flow cases. For most practical problems, they must be solved numerically.
+    \item \textbf{Turbulence Problem:} The N-S equations are thought to fully describe turbulent flows, but the range of length and time scales in turbulence is enormous. Directly solving the equations for a practical turbulent flow (Direct Numerical Simulation or DNS) requires computational resources far beyond current capabilities. Therefore, turbulence models (like RANS or LES), which are approximations, must be used.
+    \item \textbf{Continuum Assumption:} The equations are based on the assumption that the fluid is a continuum, meaning its properties (density, velocity, etc.) are continuous functions of space. This assumption breaks down for highly rarefied gases (e.g., in the upper atmosphere) or at extremely small scales (micro/nanofluidics), where the molecular nature of the fluid becomes important.
+    \item \textbf{Newtonian Fluid Model:} The standard N-S equations assume a linear relationship between viscous stress and the rate of strain (a Newtonian fluid). This is not valid for non-Newtonian fluids like polymers, slurries, or blood, which exhibit more complex rheological behavior and require different constitutive equations.
+    \item \textbf{Single-Phase Flow:} The basic equations are formulated for a single-phase fluid. Multiphase flows (e.g., liquid-gas, solid-liquid) require more complex formulations to handle the interfaces and interactions between phases.
+\end{itemize}
+\hrulefill
+
+\subsection*{\textbf{Question 8(a):}}
+\textbf{Discuss about the theory of lubrication.} [cite: 28]
+
+Lubrication theory describes the flow of a fluid lubricant in a thin gap between two solid surfaces that are in relative motion. The primary purpose is to reduce friction and wear between the surfaces. The theory is a specialized branch of fluid mechanics based on a simplified form of the Navier-Stokes equations, known as the \textbf{Reynolds equation of lubrication}.
+
+\textbf{Key Principles and Assumptions:}
+\begin{enumerate}
+    \item \textbf{Thin Film:} The height of the fluid film ($h$) is assumed to be much smaller than the lengths of the surfaces in the direction of motion ($L$). ($h \ll L$).
+    \item \textbf{Low Reynolds Number:} Due to the small gap and high viscosity of the lubricant, inertial forces are typically negligible compared to viscous forces. The flow is laminar and creeping.
+    \item \textbf{Negligible Body and Curvature Effects:} Body forces (like gravity) and effects from surface curvature are usually ignored.
+    \item \textbf{Pressure Variation:} Pressure is assumed to be constant across the thin film (in the direction perpendicular to the surfaces) but varies along the direction of motion.
+\end{enumerate}
+
+\textbf{Mechanism of Hydrodynamic Lubrication:}
+The fundamental mechanism is the generation of a high-pressure zone within the lubricant that separates the two surfaces, thereby preventing direct contact. This is typically achieved in a \textbf{converging wedge}:
+\begin{itemize}
+    \item As one surface moves relative to the other, it drags the viscous lubricant into the narrowing gap.
+    \item To conserve mass, the fluid must either slow down or be forced out the sides. The viscosity resists this change, causing pressure to build up within the converging section.
+    \item This high pressure creates a force that pushes the surfaces apart, supporting an external load. This phenomenon allows for extremely low friction in devices like journal bearings and thrust bearings.
+\end{itemize}
+\hrulefill
+
+\subsection*{\textbf{Question 8(b):}}
+\textbf{Establish the Blasius solution $ff^{\prime\prime}+2f^{\prime\prime\prime}=0$.} [cite: 29]
+
+The Blasius equation is derived from the Prandtl boundary layer equations for a steady, 2D, incompressible, laminar flow over a flat plate with zero pressure gradient.
+
+The governing equations are:
+\begin{align}
+    \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} &= 0 \quad \text{(Continuity)} \\
+    u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} &= \nu \frac{\partial^2 u}{\partial y^2} \quad \text{(Momentum)}
+\end{align}
+with boundary conditions: $u=v=0$ at $y=0$, and $u \to U_\infty$ as $y \to \infty$.
+
+A similarity transformation is used to convert these PDEs into a single ODE.
+\begin{enumerate}
+    \item Define a stream function $\psi$ such that $u = \frac{\partial \psi}{\partial y}$ and $v = -\frac{\partial \psi}{\partial x}$, which automatically satisfies continuity.
+    \item Introduce a dimensionless similarity variable $\eta$:
+    $$ \eta = y \sqrt{\frac{U_\infty}{\nu x}} $$
+    \item Assume a form for the stream function using a dimensionless function $f(\eta)$:
+    $$ \psi(x, y) = \sqrt{\nu x U_\infty} f(\eta) $$
+    \item Calculate the velocity components $u$ and $v$ in terms of $f$ and its derivatives ($f' = \frac{df}{d\eta}$):
+    \begin{align*}
+        u &= \frac{\partial \psi}{\partial y} = \frac{\partial \psi}{\partial \eta}\frac{\partial \eta}{\partial y} = \sqrt{\nu x U_\infty} f'(\eta) \cdot \sqrt{\frac{U_\infty}{\nu x}} = U_\infty f'(\eta) \\
+        v &= -\frac{\partial \psi}{\partial x} = -\left[ \frac{1}{2\sqrt{x}}\sqrt{\nu U_\infty} f(\eta) + \sqrt{\nu x U_\infty} f'(\eta) \frac{\partial \eta}{\partial x} \right] \\
+          &= -\left[ \frac{1}{2}\sqrt{\frac{\nu U_\infty}{x}}f(\eta) - \sqrt{\nu x U_\infty} f'(\eta) \frac{y}{2x}\sqrt{\frac{U_\infty}{\nu x}} \right] \\
+          &= \frac{1}{2}\sqrt{\frac{\nu U_\infty}{x}} \left[ \eta f'(\eta) - f(\eta) \right]
+    \end{align*}
+    \item Calculate the derivatives needed for the momentum equation:
+    \begin{align*}
+        \frac{\partial u}{\partial x} &= U_\infty f''(\eta) \frac{\partial \eta}{\partial x} = U_\infty f''(\eta) \left(-\frac{y}{2x}\sqrt{\frac{U_\infty}{\nu x}}\right) = - \frac{U_\infty \eta}{2x} f''(\eta) \\
+        \frac{\partial u}{\partial y} &= U_\infty f''(\eta) \frac{\partial \eta}{\partial y} = U_\infty f''(\eta) \sqrt{\frac{U_\infty}{\nu x}} \\
+        \frac{\partial^2 u}{\partial y^2} &= U_\infty f'''(\eta) \left(\frac{\partial \eta}{\partial y}\right)^2 = U_\infty f'''(\eta) \left(\frac{U_\infty}{\nu x}\right)
+    \end{align*}
+    \item Substitute these into the momentum equation (2):
+    $$ (U_\infty f')\left(- \frac{U_\infty \eta}{2x} f''\right) + \frac{1}{2}\sqrt{\frac{\nu U_\infty}{x}} (\eta f' - f) \left(U_\infty f'' \sqrt{\frac{U_\infty}{\nu x}}\right) = \nu \left(U_\infty f''' \frac{U_\infty}{\nu x}\right) $$
+    $$ -\frac{U_\infty^2 \eta}{2x} f'f'' + \frac{U_\infty^2 \nu}{2x\nu} (\eta f' - f)f'' = \frac{U_\infty^2}{x} f''' $$
+    $$ -\frac{U_\infty^2}{2x} \eta f'f'' + \frac{U_\infty^2}{2x} \eta f'f'' - \frac{U_\infty^2}{2x} f f'' = \frac{U_\infty^2}{x} f''' $$
+    $$ -\frac{U_\infty^2}{2x} f f'' = \frac{U_\infty^2}{x} f''' $$
+    \item Simplify by canceling terms ($\frac{U_\infty^2}{x}$):
+    $$ -\frac{1}{2} f f'' = f''' $$
+    Rearranging gives the final Blasius equation:
+    $$ \mathbf{2f'''(\eta) + f(\eta)f''(\eta) = 0} $$
+\end{enumerate}
+\hrulefill
+
+\subsection*{\textbf{Question 9(a):}}
+\textbf{Discuss about Von-Karman's integral equations from Prandtl's boundary layer solution.} [cite: 32]
+
+The von Kármán momentum integral equation is an approximate method for analyzing boundary layer flows. Instead of solving the Prandtl differential equations directly (which can be difficult), this method provides a result based on the integrated effects across the boundary layer thickness.
+
+\textbf{Derivation Outline:}
+The equation is derived by integrating the Prandtl momentum equation with respect to $y$ (the direction normal to the surface) from the wall ($y=0$) to the edge of the boundary layer ($y=\delta$).
+
+1.  **Start with the Prandtl momentum equation:**
+    $$ u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} = U\frac{dU}{dx} + \nu \frac{\partial^2 u}{\partial y^2} $$
+    Here, $U\frac{dU}{dx}$ replaces $-\frac{1}{\rho}\frac{dp}{dx}$ using Bernoulli's equation for the flow outside the boundary layer.
+
+2.  **Integrate each term from $y=0$ to $y=\delta$:**
+    The integration process involves using the continuity equation and the boundary conditions ($u(0)=0$, $u(\delta)=U$, $\frac{\partial u}{\partial y}(\delta) = 0$).
+
+3.  **Resulting Integral Equation:**
+    After significant algebraic manipulation, the integration leads to the von Kármán momentum integral equation:
+    $$ \frac{\tau_w}{\rho} = \frac{d}{dx}(U^2\theta) + \delta^* U \frac{dU}{dx} $$
+    where $\tau_w = \mu (\frac{\partial u}{\partial y})_{y=0}$ is the shear stress at the wall, $\theta$ is the momentum thickness, and $\delta^*$ is the displacement thickness.
+
+This equation provides a relationship between the wall shear stress and the rate of change of momentum within the boundary layer, influenced by the external pressure gradient (represented by $\frac{dU}{dx}$). It transforms the problem from solving a PDE to solving an ODE, which is much simpler, provided a reasonable velocity profile inside the boundary layer is assumed.
+\hrulefill
+
+\subsection*{\textbf{Question 9(b):}}
+\textbf{Discuss about the application of the Von-Karman's integral equation to boundary layer in absence of pressure gradient.} [cite: 33]
+
+In the absence of a pressure gradient ($dp/dx = 0$), the flow outside the boundary layer has a constant velocity, so $U_\infty$ is constant and $dU/dx = 0$. This scenario corresponds to flow over a flat plate.
+
+\textbf{Simplified Equation:}
+Under this condition, the von Kármán momentum integral equation simplifies significantly:
+$$ \frac{\tau_w}{\rho} = \frac{d}{dx}(U_\infty^2\theta) = U_\infty^2 \frac{d\theta}{dx} $$
+Since $U_\infty$ is constant. This can also be written in terms of the skin friction coefficient, $C_f = \frac{\tau_w}{\frac{1}{2}\rho U_\infty^2}$:
+$$ \frac{C_f}{2} = \frac{d\theta}{dx} $$
+This equation states that the local skin friction is directly proportional to the rate of growth of the momentum thickness.
+
+\textbf{Application Procedure (Approximate Method):}
+\begin{enumerate}
+    \item \textbf{Assume a Velocity Profile:} An approximate but realistic velocity profile $\frac{u(y)}{U_\infty} = g(\frac{y}{\delta})$ is assumed. This can be a polynomial, sinusoidal, or other function that satisfies the known boundary conditions (e.g., $u(0)=0$, $u(\delta)=U_\infty$, $\frac{\partial u}{\partial y}(\delta)=0$).
+    \item \textbf{Calculate $\theta$ and $\tau_w$:}
+        \begin{itemize}
+            \item The momentum thickness $\theta$ is calculated by integrating its definition using the assumed profile. This will express $\theta$ as a fraction of the boundary layer thickness $\delta$ (e.g., $\theta = C_1 \delta$).
+            \item The wall shear stress $\tau_w$ is calculated from its definition: $\tau_w = \mu (\frac{\partial u}{\partial y})_{y=0}$. This will express $\tau_w$ in terms of $\delta$ (e.g., $\tau_w = C_2 \frac{\mu U_\infty}{\delta}$).
+        \end{itemize}
+    \item \textbf{Solve the Integral Equation:} Substitute the expressions for $\theta$ and $\tau_w$ into the simplified integral equation $\frac{\tau_w}{\rho U_\infty^2} = \frac{d\theta}{dx}$. This results in a simple ordinary differential equation for $\delta(x)$.
+    \item \textbf{Find $\delta(x)$ and Drag:} Solving this ODE with the condition $\delta(0)=0$ gives an expression for the growth of the boundary layer thickness $\delta(x)$. Once $\delta(x)$ is known, expressions for wall shear stress, skin friction coefficient, and the total drag force on the plate can be determined.
+\end{enumerate}
+This method provides remarkably accurate results for engineering purposes with much less effort than solving the full boundary layer equations.
+\hrulefill
+
+\subsection*{\textbf{Question 10(a):}}
+\textbf{Define vorticity. Show that the vorticity vector of an incompressible viscous fluid moving under no external forces satisfies the differential equation $\frac{D\Omega}{Dt}=(\Omega\cdot\nabla)u+\nu\nabla^{2}\Omega$.} [cite: 35, 36, 37]
+
+\textbf{Vorticity ($\vec{\Omega}$):}
+Vorticity is a vector field that describes the local spinning motion of a fluid near some point. Mathematically, it is defined as the curl of the velocity vector $\vec{u}$:
+$$ \vec{\Omega} = \nabla \times \vec{u} $$
+
+\textbf{Derivation of the Vorticity Transport Equation:}
+We start with the Navier-Stokes equation for an incompressible fluid with no body forces:
+$$ \frac{\partial \vec{u}}{\partial t} + (\vec{u} \cdot \nabla)\vec{u} = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \vec{u} $$
+The left side is the material derivative, $\frac{D\vec{u}}{Dt}$.
+\begin{enumerate}
+    \item \textbf{Take the curl ($\nabla \times$) of the entire equation:}
+    $$ \nabla \times \left(\frac{D\vec{u}}{Dt}\right) = \nabla \times \left(-\frac{1}{\rho}\nabla p\right) + \nabla \times (\nu \nabla^2 \vec{u}) $$
+    \item \textbf{Analyze each term:}
+    \begin{itemize}
+        \item \textbf{Pressure Term:} The curl of a gradient is always zero: $\nabla \times (\nabla p) = 0$.
+        \item \textbf{Viscous Term:} The curl and Laplacian operators commute for a constant viscosity: $\nabla \times (\nabla^2 \vec{u}) = \nabla^2 (\nabla \times \vec{u}) = \nabla^2 \vec{\Omega}$.
+    \end{itemize}
+    The equation becomes: $\nabla \times \left(\frac{D\vec{u}}{Dt}\right) = \nu \nabla^2 \vec{\Omega}$.
+    \item \textbf{Expand the material derivative term:}
+    $\frac{D\vec{u}}{Dt} = \frac{\partial \vec{u}}{\partial t} + (\vec{u} \cdot \nabla)\vec{u}$.
+    We need to evaluate $\nabla \times \left( \frac{\partial \vec{u}}{\partial t} + (\vec{u} \cdot \nabla)\vec{u} \right)$.
+    \begin{itemize}
+        \item $\nabla \times (\frac{\partial \vec{u}}{\partial t}) = \frac{\partial}{\partial t}(\nabla \times \vec{u}) = \frac{\partial \vec{\Omega}}{\partial t}$.
+        \item Use the vector identity: $\nabla \times (\vec{A} \times \vec{B}) = (\vec{B}\cdot\nabla)\vec{A} - (\vec{A}\cdot\nabla)\vec{B} + \vec{A}(\nabla\cdot\vec{B}) - \vec{B}(\nabla\cdot\vec{A})$. The term $(\vec{u} \cdot \nabla)\vec{u}$ can be written using the identity $\frac{1}{2}\nabla(\vec{u}\cdot\vec{u}) = \vec{u} \times (\nabla \times \vec{u}) + (\vec{u}\cdot\nabla)\vec{u}$.
+        So, $(\vec{u} \cdot \nabla)\vec{u} = \frac{1}{2}\nabla(V^2) - \vec{u} \times \vec{\Omega}$.
+        \item Taking the curl: $\nabla \times ((\vec{u} \cdot \nabla)\vec{u}) = \nabla \times (\frac{1}{2}\nabla(V^2)) - \nabla \times (\vec{u} \times \vec{\Omega})$.
+        The first part is zero. For the second part, using the identity:
+        $- \nabla \times (\vec{u} \times \vec{\Omega}) = -[(\vec{\Omega}\cdot\nabla)\vec{u} - (\vec{u}\cdot\nabla)\vec{\Omega} + \vec{u}(\nabla\cdot\vec{\Omega}) - \vec{\Omega}(\nabla\cdot\vec{u})]$.
+        For incompressible flow, $\nabla \cdot \vec{u} = 0$. Also, the divergence of a curl is zero, $\nabla \cdot \vec{\Omega} = 0$.
+        So, $\nabla \times ((\vec{u} \cdot \nabla)\vec{u}) = -[(\vec{\Omega}\cdot\nabla)\vec{u} - (\vec{u}\cdot\nabla)\vec{\Omega}] = (\vec{u}\cdot\nabla)\vec{\Omega} - (\vec{\Omega}\cdot\nabla)\vec{u}$.
+    \end{itemize}
+    \item \textbf{Combine the terms for the left side:}
+    $$ \nabla \times \left(\frac{D\vec{u}}{Dt}\right) = \frac{\partial \vec{\Omega}}{\partial t} + (\vec{u}\cdot\nabla)\vec{\Omega} - (\vec{\Omega}\cdot\nabla)\vec{u} = \frac{D\vec{\Omega}}{Dt} - (\vec{\Omega}\cdot\nabla)\vec{u} $$
+    \item \textbf{Assemble the final equation:}
+    Equating the transformed left and right sides:
+    $$ \frac{D\vec{\Omega}}{Dt} - (\vec{\Omega}\cdot\nabla)\vec{u} = \nu \nabla^2 \vec{\Omega} $$
+    Rearranging gives the desired vorticity transport equation:
+    $$ \frac{D\vec{\Omega}}{Dt} = (\vec{\Omega}\cdot\nabla)\vec{u} + \nu\nabla^{2}\vec{\Omega} $$
+\end{enumerate}
+\hrulefill
+
+\subsection*{\textbf{Question 10(b):}}
+\textbf{Establish the Navier-Stokes equation of motion for a viscous compressible fluid in Cartesian coordinate system.} [cite: 38]
+
+The Navier-Stokes equations are derived from the conservation of momentum (Newton's Second Law) applied to a fluid element. For a viscous, compressible fluid, the momentum equation in vector form is:
+$$ \rho \frac{D\vec{u}}{Dt} = \rho \vec{g} - \nabla p + \nabla \cdot \boldsymbol{\tau} $$
+where $\rho$ is density, $\vec{u}$ is the velocity vector, $\vec{g}$ is body force per unit mass (gravity), $p$ is pressure, and $\boldsymbol{\tau}$ is the viscous stress tensor. For a Newtonian fluid, $\boldsymbol{\tau}$ is related to the velocity gradients by:
+$$ \boldsymbol{\tau} = \mu \left[ (\nabla \vec{u} + (\nabla \vec{u})^T) - \frac{2}{3}(\nabla \cdot \vec{u})\mathbf{I} \right] $$
+where $\mu$ is the dynamic viscosity and $\mathbf{I}$ is the identity tensor. Note that for a compressible fluid, the divergence of velocity $\nabla \cdot \vec{u}$ is not zero.
+
+Expanding this vector equation into Cartesian coordinates $(x, y, z)$ with velocity components $(u, v, w)$ gives the following three equations:
+
+\textbf{x-component:}
+\begin{align*}
+\rho\left(\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z}\right) = & \rho g_x - \frac{\partial p}{\partial x} \\
+& + \frac{\partial}{\partial x}\left[\mu\left(2\frac{\partial u}{\partial x} - \frac{2}{3}(\nabla \cdot \vec{u})\right)\right] \\
+& + \frac{\partial}{\partial y}\left[\mu\left(\frac{\partial u}{\partial y} + \frac{\partial v}{\partial x}\right)\right] \\
+& + \frac{\partial}{\partial z}\left[\mu\left(\frac{\partial u}{\partial z} + \frac{\partial w}{\partial x}\right)\right]
+\end{align*}
+
+\textbf{y-component:}
+\begin{align*}
+\rho\left(\frac{\partial v}{\partial t} + u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} + w\frac{\partial v}{\partial z}\right) = & \rho g_y - \frac{\partial p}{\partial y} \\
+& + \frac{\partial}{\partial x}\left[\mu\left(\frac{\partial v}{\partial x} + \frac{\partial u}{\partial y}\right)\right] \\
+& + \frac{\partial}{\partial y}\left[\mu\left(2\frac{\partial v}{\partial y} - \frac{2}{3}(\nabla \cdot \vec{u})\right)\right] \\
+& + \frac{\partial}{\partial z}\left[\mu\left(\frac{\partial v}{\partial z} + \frac{\partial w}{\partial y}\right)\right]
+\end{align*}
+
+\textbf{z-component:}
+\begin{align*}
+\rho\left(\frac{\partial w}{\partial t} + u\frac{\partial w}{\partial x} + v\frac{\partial w}{\partial y} + w\frac{\partial w}{\partial z}\right) = & \rho g_z - \frac{\partial p}{\partial z} \\
+& + \frac{\partial}{\partial x}\left[\mu\left(\frac{\partial w}{\partial x} + \frac{\partial u}{\partial z}\right)\right] \\
+& + \frac{\partial}{\partial y}\left[\mu\left(\frac{\partial w}{\partial y} + \frac{\partial v}{\partial z}\right)\right] \\
+& + \frac{\partial}{\partial z}\left[\mu\left(2\frac{\partial w}{\partial z} - \frac{2}{3}(\nabla \cdot \vec{u})\right)\right]
+\end{align*}
+
+In all three equations, the term $(\nabla \cdot \vec{u})$ is the divergence of velocity:
+$$ \nabla \cdot \vec{u} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} $$
+These equations, together with the continuity equation for a compressible fluid ($\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \vec{u}) = 0$) and an energy equation, form the complete set of governing equations for a viscous, compressible fluid flow.
+
+\end{document}

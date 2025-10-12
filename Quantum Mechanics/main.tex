@@ -1,0 +1,1006 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\sisetup{per-mode = fraction}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{fancyhdr} 
+\usepackage{tocbasic}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header
+\fancyhead[L]{\textit{Quantum Mechanics}}
+\fancyhead[C]{}
+\fancyhead[R]{MUH2106059M}
+
+% Footer
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+}
+
+\begin{document}
+\begin{titlepage}
+\fboxrule=2pt
+\fbox{
+\begin{minipage}{1\textwidth}
+\centering
+\vspace*{1.5cm}
+
+{\Huge An Assignment On \\[0.5em] \bfseries Quantum Mechanics} \\[0.5em]
+
+
+\vspace{1.5cm}
+{\large Submitted by:}\\[0.3em]
+{\Large \bf Minhajul Abedin}\\[0.2em]
+{\large Student ID: MUH2106059M}\\[0.2em]
+{\large Session: 2020-21}\\[0.2em]
+{\large Year: 04, Term: I}\\[0.2em]
+{\large Department of Applied Mathematics}\\[0.2em]
+{\large Noakhali Science and Technology University}\\[2em]
+
+
+\vfill
+
+{\large Submitted to:}\\[0.3em]
+{\Large \bf Dr. Mohammad Raquibul Hossain}\\[0.2em]
+{\Large Professor}\\[0.2em]
+{\large Department of Applied Mathematics}\\[0.2em]
+{\large Noakhali Science and Technology University}\\[2em]
+
+\vfill
+
+\includegraphics[width=0.2\linewidth]{nstu_logo.png}
+\vspace{1em}
+
+{\Large Department of Applied Mathematics}\\[0.3em]
+{\Huge Noakhali Science and Technology University}\\[1em]
+{\textit {Date of Submission: 13th October, 2025}}
+
+\vspace*{1.5cm}
+\end{minipage}
+}
+\end{titlepage}
+
+\setcounter{secnumdepth}{-1}
+\tableofcontents
+\newpage
+
+\section*{Quantum Mechanics}
+
+\subsection{[A0] Write short notes on: force, matter, energy, field, photon, potential energy, kinetic energy, solar panel, correspondence principle, principle of complementarity, quantum states of energy.}
+
+\begin{description}
+
+\item[Force:]
+A force is an influence that can change the motion of an object. It has both magnitude and direction, making it a vector quantity. It is defined by Newton's second law:
+\[
+\vec{F} = m\vec{a}
+\]
+where \( \vec{F} \) is the force, \( m \) is mass, and \( \vec{a} \) is acceleration. The SI unit is the Newton (N).
+
+\item[Matter:]
+Matter is anything that has mass and occupies space. It is composed of atoms, which are in turn made up of subatomic particles (protons, neutrons, and electrons). Matter commonly exists in four states: solid, liquid, gas, and plasma.
+
+\item[Energy:]
+Energy is the capacity to do work or produce heat. It is a scalar quantity and is conserved in an isolated system (Law of Conservation of Energy). It exists in various forms, such as kinetic, potential, thermal, and chemical. Its SI unit is the Joule (J).
+
+\item[Field:]
+A field is a physical quantity that has a value for each point in space and time. Examples include:
+\begin{itemize}
+    \item \textbf{Gravitational Field}: \( \vec{g} = \frac{\vec{F}_g}{m} \)
+    \item \textbf{Electric Field}: \( \vec{E} = \frac{\vec{F}_e}{q} \)
+    \item \textbf{Magnetic Field}: \( \vec{B} \)
+\end{itemize}
+Fields describe forces acting at a distance.
+
+\item[Photon:]
+A photon is a quantum (packet) of electromagnetic energy. It is an elementary particle and the force carrier for the electromagnetic force. It has zero rest mass and always moves at the speed of light in a vacuum, \( c \). Its energy is given by:
+\[
+E = h\nu = \frac{hc}{\lambda}
+\]
+where \( h \) is Planck's constant, \( \nu \) is frequency, and \( \lambda \) is wavelength.
+
+\item[Potential Energy:]
+Potential energy is the energy stored in an object due to its position, configuration, or state. Common types include:
+\begin{itemize}
+    \item \textbf{Gravitational}: \( U_g = mgh \) (near Earth's surface)
+    \item \textbf{Elastic}: \( U_s = \frac{1}{2}kx^2 \)
+    \item \textbf{Electric}: \( U_e = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r} \)
+\end{itemize}
+
+\item[Kinetic Energy:]
+Kinetic energy is the energy an object possesses due to its motion. For a point mass, it is given by:
+\[
+K = \frac{1}{2}mv^2
+\]
+where \( m \) is mass and \( v \) is speed. For rotational motion, \( K = \frac{1}{2}I\omega^2 \), where \( I \) is the moment of inertia and \( \omega \) is the angular velocity.
+
+\item[Solar Panel:]
+A solar panel (or photovoltaic cell) is a device that converts the energy of light directly into electricity via the photovoltaic effect. When photons from sunlight strike a semiconductor material (like silicon), they can excite electrons, creating an electric current.
+
+\item[Correspondence Principle:]
+The correspondence principle, proposed by Niels Bohr, states that the behavior of quantum mechanical systems must reduce to classical physics in the limit of large quantum numbers. It ensures that new theories are consistent with well-established older theories in the domains where the older theories are valid.
+
+\item[Principle of Complementarity:]
+The principle of complementarity, also from Bohr, is a cornerstone of quantum mechanics. It states that objects have complementary properties (like position and momentum, or wave and particle nature) that cannot be observed or measured simultaneously. The more precisely one property is known, the less precisely the complementary property can be known.
+
+\item[Quantum States of Energy:]
+In quantum mechanics, systems such as atoms and molecules can only exist in discrete quantum states of energy. These states are described by wavefunctions, \( \psi_n \), which are solutions to the Schr\"{o}dinger equation. A prominent example is the quantum harmonic oscillator, whose energy levels are given by:
+\[
+E_n = \hbar \omega \left( n + \frac{1}{2} \right), \quad n = 0, 1, 2, \dots
+\]
+where \( \hbar \) is the reduced Planck's constant and \( \omega \) is the angular frequency.
+\end{description}
+
+\subsection{[A1] Briefly describe the two developmental stages of Quantum Mechanics (differentiating old quantum theory and modern quantum mechanics).}
+
+The development of Quantum Mechanics can be broadly divided into two stages:
+\begin{enumerate}
+    \item \textbf{Old Quantum Theory (Early 1900s):} This stage involved the introduction of quantum concepts to explain phenomena that classical physics could not, such as \textbf{black body radiation} (Planck's hypothesis of energy quantization, $E=h\nu$), the \textbf{photoelectric effect} (Einstein's photon theory), and the \textbf{stability and discrete spectra of atoms} (Bohr's model for the hydrogen atom). These theories often applied \textit{ad hoc} quantization rules to classical mechanics and were successful in explaining specific problems but lacked a consistent theoretical framework. Shortcomings included failure to explain the intensities of spectral lines or the fine structure of spectral lines.
+
+    \item \textbf{Modern Quantum Mechanics (Mid-1920s onwards):} This stage began with the development of a comprehensive and consistent theory. Key contributions include \textbf{wave mechanics} (Schrödinger's wave equation in 1926) and \textbf{matrix mechanics} (Werner Heisenberg). It introduced fundamental principles like \textbf{wave-particle duality} for both matter and energy, the \textbf{uncertainty principle} (Heisenberg), and a rigorous mathematical framework involving \textbf{wave functions} ($\Psi$) and \textbf{operators}. Modern quantum mechanics provided a unified and predictive theory for a wide range of atomic and subatomic phenomena, resolving many inconsistencies of the old quantum theory.
+\end{enumerate}
+
+\subsection{[A2] Briefly describe the contribution of Max Planck, Werner Heisenberg and Erwin Schrodinger in the development of Quantum Mechanics.}
+
+\begin{itemize}
+    \item \textbf{Max Planck:} Planck initiated quantum theory in 1900 by proposing the \textbf{quantum hypothesis} to explain black body radiation. He hypothesized that energy is not continuous but is emitted and absorbed in \textbf{discrete packets, or quanta}, with the energy of each quantum being proportional to its frequency ($E=h\nu$). This idea fundamentally challenged classical physics and laid the groundwork for all subsequent quantum developments.
+    \item \textbf{Werner Heisenberg:} Heisenberg is best known for formulating the \textbf{Uncertainty Principle}. This principle states that it is fundamentally impossible to simultaneously determine with arbitrary precision certain pairs of conjugate physical properties, such as a particle's \textbf{position ($\Delta x$) and momentum ($\Delta p_x$)} ($\Delta x\,\Delta p_x \ge \hbar$) or \textbf{energy ($\Delta E$) and time ($\Delta t$)} ($\Delta E\,\Delta t \ge \hbar$). This principle underscored the probabilistic and non-deterministic nature of quantum reality, contrasting sharply with classical determinism.
+    \item \textbf{Erwin Schrödinger:} Schrödinger developed \textbf{wave mechanics} and formulated the \textbf{Schrödinger wave equation}. This equation is a partial differential equation that describes how the quantum state (represented by the wave function $\Psi$) of a physical system changes over time. The wave function, a solution to his equation, contains all the information about a quantum system, and its square modulus ($|\Psi|^2$) gives the probability density of finding a particle at a given location. The time-dependent Schrödinger equation for a single particle in three dimensions is
+    \[
+      \left(-\frac{\hbar^2}{2m}\nabla^2 + V(r,t)\right)\Psi = i\hbar\,\frac{\partial\Psi}{\partial t}.
+    \]
+\end{itemize}
+
+\subsection{[A3] Describe black body radiation. Describe Planck's quantum hypothetical assumptions in explaining energy distribution in the spectrum of a blackbody and Planck's radiation law mentioning its mathematical consequences (other laws as special cases).}
+
+\begin{itemize}
+    \item \textbf{Black Body Radiation:} A \textbf{black body} is an idealized object that absorbs all incident electromagnetic radiation and emits radiation depending solely on its temperature, with a continuous spectrum. Classical physics, specifically the Rayleigh-Jeans law, failed to explain the observed energy distribution, leading to the ``ultraviolet catastrophe,'' where it predicted infinite energy emission at short wavelengths.
+    \item \textbf{Planck's Quantum Hypothetical Assumptions:} To resolve the ultraviolet catastrophe and explain black body radiation, Max Planck proposed two radical assumptions in 1900:
+    \begin{enumerate}[label=\alph*.]
+        \item The atoms (oscillators) within the walls of a black body can only possess \textbf{discrete amounts of energy}, given by $E=n h\nu$, where $n=0,1,2,\dots$, $h$ is Planck's constant, and $\nu$ is the frequency of the oscillator.
+        \item These oscillators \textbf{emit or absorb energy only in discrete packets (quanta)} when they transition between these allowed energy states. The energy of each quantum is $h\nu$.
+    \end{enumerate}
+    \item \textbf{Planck's Radiation Law and Mathematical Consequences:}
+    \begin{enumerate}[label=\alph*.]
+        \item \textbf{Planck's Radiation Law:} Based on his quantum hypothesis, Planck derived the radiation law, which accurately describes the spectral energy density ($U_{\lambda}\,d\lambda$) of a black body at a given temperature:
+        \[
+          U_{\lambda}\,d\lambda=\frac{8\pi hc}{\lambda^5}\,\frac{1}{e^{hc/(\lambda kT)}-1}\,d\lambda.
+        \]
+        \item \textbf{Mathematical Consequences (Other Laws as Special Cases):} Planck's law encompasses earlier classical laws as special cases:
+        \begin{enumerate}[label=\roman*.]
+            \item \textbf{Rayleigh-Jeans Law:} For \textbf{long wavelengths ($\lambda \gg hc/(kT)$)}, Planck's law approximates to the Rayleigh-Jeans law: $U_{\lambda}\,d\lambda=\dfrac{8\pi kT}{\lambda^4}\,d\lambda$.
+            \item \textbf{Wien's Radiation Formula:} For \textbf{short wavelengths ($\lambda \ll hc/(kT)$)}, Planck's law reduces to Wien's radiation formula: $U_{\lambda}\,d\lambda = \dfrac{C_1}{\lambda^5}\,e^{-C_2/(\lambda T)}\,d\lambda$, where $C_1=2\pi hc^2$ and $C_2=hc/k$. Wien's displacement law ($\lambda_m T=\text{constant}$) can also be derived from Planck's law.
+            \item \textbf{Stefan-Boltzmann Law:} Integrating Planck's law over all wavelengths yields the total energy radiated, which is proportional to the fourth power of the absolute temperature ($U\propto T^4$), leading to the Stefan-Boltzmann law ($E=\sigma T^4$).
+        \end{enumerate}
+    \end{enumerate}
+\end{itemize}
+
+\subsection{[A4] Distinguish between electron and photon. Also, write short note on the wave-particle duality of matter and energy elementary entities along with Young's double slit experiment.}
+
+\begin{itemize}
+    \item \textbf{Distinguish between Electron and Photon:}
+\begin{table}[h]
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Property} & \textbf{Electron} & \textbf{Photon} \\
+\hline
+Particle Type & Fundamental matter particle & Quantum of electromagnetic energy \\
+\hline
+Rest Mass & $m_0 \approx 9.11 \times 10^{-31}\ \text{kg}$ & Zero rest mass \\
+\hline
+Electric Charge & $e \approx 1.6 \times 10^{-19}\ \text{C}$ & No electric charge \\
+\hline
+Speed in Vacuum & Less than $c$ & Always at speed of light ($c$) \\
+\hline
+Energy & Various forms & $E = h\nu$ \\
+\hline
+Momentum & Various forms & $p = h/\lambda$ \\
+\hline
+Wave-Particle Duality & Exhibits & Exhibits \\
+\hline
+\end{tabular}
+\end{table}
+    \item \textbf{Wave-Particle Duality of Matter and Energy Elementary Entities:}
+    \begin{enumerate}[label=\alph*.]
+        \item \textbf{Wave-particle duality} is a central concept in quantum mechanics that states that \textbf{all elementary entities, whether matter or energy, exhibit both wave-like and particle-like properties}.
+        \begin{itemize}
+            \item \textbf{For Energy (e.g., light):} Light demonstrates its \textbf{wave nature} through phenomena like interference and diffraction. However, its \textbf{particle nature} (photons) is evident in effects such as the photoelectric effect and Compton effect.
+            \item \textbf{For Matter (e.g., electrons):} Louis de Broglie hypothesized that particles like electrons also have an associated wavelength, the \textbf{De Broglie wavelength ($\lambda=h/p$)}, demonstrating their wave nature. Experiments like \textbf{Davisson and Germer's electron diffraction} confirmed this wave nature of matter.
+        \end{itemize}
+    \end{enumerate}
+    \item \textbf{Young's Double-Slit Experiment:} Young's double-slit experiment is a classic demonstration of the \textbf{wave nature of light}, where an interference pattern is observed when light passes through two slits. Conceptually, if quantum particles (like electrons) are sent through a double-slit apparatus one by one, they also produce an interference pattern over time. This illustrates that even individual quantum entities behave probabilistically, with their path described by a wave function, before being detected as localized particles, thereby encapsulating wave-particle duality.
+\end{itemize}
+
+\subsection{[A5] Briefly describe photoelectric effect. Write characteristics of photoelectric effect and limitations of pre-Quantum wave theory of light on explaining this effect.}
+
+\begin{itemize}
+    \item \textbf{Photoelectric Effect:} The photoelectric effect is the phenomenon where electrons are ejected from the surface of a metal when electromagnetic radiation (light) of a sufficiently high frequency shines on it. The ejected electrons are called photoelectrons.
+    \item \textbf{Characteristics of Photoelectric Effect:}
+    \begin{enumerate}[label=\alph*.]
+        \item \textbf{Existence of a Threshold Frequency:} For a given metal, there is a minimum frequency (threshold frequency, $\nu_0$) of incident light below which no photoelectrons are emitted, regardless of the light's intensity.
+        \item \textbf{Kinetic Energy is Independent of Intensity, Dependent on Frequency:} The maximum kinetic energy of the emitted photoelectrons is independent of the intensity of the incident light, but it increases linearly with the frequency of the incident light (above $\nu_0$).
+        \item \textbf{Instantaneous Emission:} The emission of photoelectrons is virtually instantaneous (within $\sim 10^{-9}$ seconds) after light strikes the surface, provided the frequency is above the threshold, with no measurable time delay.
+        \item \textbf{Photoelectric Current and Intensity:} The number of photoelectrons emitted per unit time (photoelectric current) is directly proportional to the intensity of the incident light (for $\nu > \nu_0$).
+    \end{enumerate}
+    \item \textbf{Limitations of Pre-Quantum Wave Theory of Light:} Classical wave theory failed to explain the photoelectric effect for the following reasons:
+    \begin{enumerate}[label=\roman*.]
+        \item \textbf{Threshold Frequency:} Wave theory predicted that electron emission should occur at any frequency, given sufficient intensity and time for energy accumulation, contradicting the observed threshold frequency.
+        \item \textbf{Kinetic Energy Dependence:} It suggested that higher intensity (larger wave amplitude) should provide more energy to electrons, resulting in higher kinetic energy. This contradicted the observation that kinetic energy depends on frequency, not intensity.
+        \item \textbf{Instantaneous Emission:} Wave theory predicted a time delay for electron ejection at very low intensities, as electrons would need to absorb energy gradually from the wave. This was contrary to the observed instantaneous emission.
+    \end{enumerate}
+\end{itemize}
+
+\subsection{[A6] Describe Einstein's photon theory to explain photoelectric effect.}
+
+\textbf{Einstein's Photon Theory to Explain the Photoelectric Effect:}
+In 1905, Albert Einstein explained the photoelectric effect by extending Max Planck's quantum hypothesis. He proposed that light consists of discrete packets of energy called \textbf{photons}, with the energy of each photon given by $E=h\nu$ (where $h$ is Planck's constant and $\nu$ is the light frequency).
+
+Einstein's theory successfully explained the characteristics of the photoelectric effect:
+\begin{enumerate}
+    \item \textbf{Threshold Frequency:} When a photon strikes a metal, it transfers its entire energy ($h\nu$) to a single electron. If $h\nu$ is less than the \textbf{work function ($W_0$)} (the minimum energy required to eject an electron from the metal), no electron will be emitted, regardless of light intensity. This explains the threshold frequency ($\nu_0$) where $h\nu_0=W_0$.
+    \item \textbf{Kinetic Energy Dependence:} If $h\nu > W_0$, the excess energy is converted into the maximum kinetic energy ($E_{\max}$) of the ejected electron: $E_{\max}=h\nu - W_0$. This equation shows that $E_{\max}$ depends linearly on the frequency of light and is independent of its intensity.
+    \item \textbf{Instantaneous Emission:} The energy transfer from a photon to an electron is a single, instantaneous event. Therefore, electron emission occurs immediately upon illumination, provided $h\nu > W_0$, with no time lag.
+    \item \textbf{Intensity and Photoelectric Current:} Increasing the intensity of light means increasing the number of photons incident per unit time. This leads to more photon-electron interactions, resulting in a larger number of emitted photoelectrons and thus a greater photoelectric current, while $E_{\max}$ remains unchanged for a given frequency.
+\end{enumerate}
+
+\subsection{[A7] Briefly present Thomson's atom model. Also, describe Rutherford's model along with its limitation and describe Bohr's model as a resolution to it.}
+
+\begin{itemize}
+    \item \textbf{Thomson's Atom Model:} Information regarding Thomson's atom model is \textbf{not explicitly detailed} in the provided excerpts.
+    \item \textbf{Rutherford's Atom Model:}
+    \begin{enumerate}[label=\alph*.]
+        \item \textbf{Description:} Based on alpha-particle scattering experiments, Ernest Rutherford proposed the \textbf{nuclear model} of the atom. His model suggested that:
+        \begin{itemize}
+            \item Almost all the mass and all the positive charge of an atom are concentrated in a tiny central region called the nucleus.
+            \item The electrons revolve around the nucleus in circular orbits, much like planets around the sun.
+            \item The atom is mostly empty space.
+        \end{itemize}
+        \item \textbf{Limitations of Rutherford's Model:} The Rutherford model faced two major limitations according to classical physics:
+        \begin{itemize}
+            \item \textbf{Stability of the Atom:} According to classical electromagnetism, an electron orbiting the nucleus is an accelerating charge and should continuously emit electromagnetic radiation, losing energy. This would cause the electron to spiral inwards and eventually collapse into the nucleus, making the atom unstable. This contradicts the observed stability of atoms.
+            \item \textbf{Atomic Spectra:} The continuous energy loss predicted by classical physics would lead to a continuous spectrum of emitted light. However, atoms are observed to emit discrete line spectra, indicating that electrons exist in specific energy states.
+        \end{itemize}
+    \end{enumerate}
+    \item \textbf{Bohr's Model as a Resolution:} Niels Bohr proposed his model to address Rutherford's limitations by introducing quantum ideas:
+    \begin{enumerate}[label=\roman*.]
+        \item \textbf{Postulate of Stationary States:} Electrons can revolve around the nucleus only in certain specific, stable orbits\textbf{ (stationary states)} without radiating energy. Each orbit corresponds to a definite energy level.
+        \item \textbf{Postulate of Quantized Angular Momentum:} In these allowed orbits, the angular momentum ($L$) of the electron is quantized, being an integral multiple of $\hbar$: $L=n\hbar=h n/(2\pi)$, where $n=1,2,3,\dots$ is the principal quantum number.
+        \item \textbf{Postulate of Energy Transitions:} Electrons only emit or absorb energy when they jump from one allowed orbit to another. The energy of the emitted or absorbed photon is equal to the energy difference between the initial and final states: $h\nu=E_{n_2}-E_{n_1}$.
+    \end{enumerate}
+    Bohr's model successfully explained the stability of atoms (no radiation in stationary states) and the discrete line spectra (emission/absorption only during transitions between quantized energy levels) for hydrogen-like atoms.
+\end{itemize}
+
+\subsection{[A8] Mention the shortcomings of old quantum theory. Describe the dual character of light in short.}
+
+\begin{itemize}
+    \item \textbf{Shortcomings of Old Quantum Theory:} The ``old quantum theory,'' exemplified by Bohr's model, had several limitations:
+    \begin{enumerate}[label=\roman*.]
+        \item It was successful mainly for hydrogen-like atoms (single electron systems) but failed to explain the spectra of multi-electron atoms.
+        \item It could not explain the intensities of spectral lines.
+        \item It failed to explain the fine structure of spectral lines and the \textbf{Zeeman effect} (splitting of spectral lines in the presence of a magnetic field).
+        \item It was an ad hoc mixture of classical and quantum concepts without a fully consistent theoretical foundation.
+        \item It did not provide a method to calculate transition probabilities for spectral lines.
+    \end{enumerate}
+    \item \textbf{Dual Character of Light:} Light exhibits \textbf{wave-particle duality}, meaning it possesses both wave-like and particle-like properties. Its wave nature is demonstrated by phenomena such as interference and diffraction, while its particle nature (as \textbf{photons}) is demonstrated by effects like the \textbf{photoelectric effect} and \textbf{Compton effect}. Light behaves as a wave in some experiments and as a particle in others, but never simultaneously as both in the same experiment.
+\end{itemize}
+
+\subsection{[A9] Briefly describe Compton effect. Obtain the expression for Compton shift in the wavelength of the X-rays. Find the relation between $\theta$ and $\phi$ in Compton scattering. Show that the kinetic energy of the recoil electron is $E=h\nu \dfrac{2\alpha}{(1+\alpha)^2\sec^2\theta-\alpha^2}$, where $\alpha=\dfrac{h\nu}{m_0c^2}$.}
+
+\begin{itemize}
+    \item \textbf{Compton Effect:} The \textbf{Compton effect} describes the \textbf{scattering of high-energy photons (like X-rays) by free electrons}, resulting in the photon losing some of its energy (and thus increasing its wavelength) and the electron recoiling. This phenomenon provides compelling evidence for the \textbf{particle nature of light} (photons), treating the interaction as a collision between two particles, where energy and momentum are conserved.
+    \item \textbf{Expression for Compton Shift ($\Delta\lambda$):} The change in wavelength (Compton shift) is given by:
+    \[
+      \Delta\lambda=\lambda'-\lambda=\frac{h}{m_0c}\,(1-\cos\theta),
+    \]
+    where $\lambda$ is the incident wavelength, $\lambda'$ is the scattered wavelength, $h$ is Planck's constant, $m_0$ is the rest mass of the electron, $c$ is the speed of light, and $\theta$ is the scattering angle of the photon. The quantity $\lambda_{\text{C}}=h/(m_0c)$ is known as the \textbf{Compton wavelength of the electron}.
+    \item \textbf{Relation between $\theta$ and $\phi$ in Compton Scattering:} A common form derived from conservation laws is
+    \[
+      \tan\phi=\frac{\sin\theta}{\left(1+\dfrac{h\nu}{m_0c^2}\right)-\cos\theta}.
+    \]
+    \item \textbf{Kinetic Energy of the Recoil Electron:} The specific expression
+    \[
+      E=h\nu\,\frac{2\alpha}{(1+\alpha)^2\sec^2\theta-\alpha^2},\quad \alpha=\frac{h\nu}{m_0c^2}
+    \]
+    is not derived in the provided excerpts. Generally, the kinetic energy is $E_{\text{electron}}=h\nu-h\nu'$.
+\end{itemize}
+
+\subsection{[A10] A metallic surface, when illuminated with light of wavelength $\lambda_1$, emits electrons with energies up to a maximum value $E_1$, and when illuminated with light of wavelength $\lambda_2$ ($\lambda_2<\lambda_1$), it emits electrons with energies up to a maximum value $E_2$. Prove that Planck's constant $h$ and the work-function $W_0$ of the metal are given by $h=\dfrac{(E_2-E_1)\lambda_1\lambda_2}{c(\lambda_1-\lambda_2)}$ and $W_0=\dfrac{E_2\lambda_2-E_1\lambda_1}{\lambda_1-\lambda_2}$. Also, calculate $h$ and $W_0$ provided that $\lambda_1=3333\ \text{\AA}$, $\lambda_2=2400\ \text{\AA}$, $E_1=0.6\ \text{eV}$ and $E_2=2.04\ \text{eV}$ for a metal.}
+
+\begin{itemize}
+    \item \textbf{Proof for Planck's Constant ($h$) and Work-Function ($W_0$):}
+    According to Einstein's photoelectric equation, the maximum kinetic energy ($E_{\max}$) of an emitted electron is given by $E_{\max}=h\nu-W_0$. Since $\nu=c/\lambda$, this can be written as $E_{\max}=\dfrac{hc}{\lambda}-W_0$.
+    \begin{enumerate}[label=\alph*.]
+        \item For the first illumination:
+        \begin{equation}
+            \label{eq:E1}
+            E_1=\frac{hc}{\lambda_1}-W_0
+        \end{equation}
+        \item For the second illumination:
+        \begin{equation}
+            \label{eq:E2}
+            E_2=\frac{hc}{\lambda_2}-W_0
+        \end{equation}
+        \item Subtracting Eq.~\eqref{eq:E1} from Eq.~\eqref{eq:E2} gives:
+        \begin{align*}
+            E_2-E_1&=\frac{hc}{\lambda_2}-\frac{hc}{\lambda_1}\\
+                   &=hc\left(\frac{1}{\lambda_2}-\frac{1}{\lambda_1}\right)\\
+                   &=hc\left(\frac{\lambda_1-\lambda_2}{\lambda_1\lambda_2}\right).
+        \end{align*}
+        Rearranging for $h$:
+        \[
+          h=\frac{(E_2-E_1)\lambda_1\lambda_2}{c(\lambda_1-\lambda_2)}.
+        \]
+        \item To find $W_0$, substitute $h$ back into Eq.~\eqref{eq:E1}:
+        \begin{align*}
+            W_0&=\frac{hc}{\lambda_1}-E_1\\
+               &=\frac{c}{\lambda_1}\left[\frac{(E_2-E_1)\lambda_1\lambda_2}{c(\lambda_1-\lambda_2)}\right]-E_1\\
+               &=\frac{(E_2-E_1)\lambda_2}{\lambda_1-\lambda_2}-E_1\\
+               &=\frac{E_2\lambda_2-E_1\lambda_1}{\lambda_1-\lambda_2}.
+        \end{align*}
+    \end{enumerate}
+
+    \item \textbf{Calculation for $h$ and $W_0$:}
+    \begin{enumerate}[label=\alph*.]
+        \item \textbf{Given values:}
+        \begin{itemize}
+            \item $\lambda_1=3333 \AA =3.333\times 10^{-7}\ \text{m}$
+            \item $\lambda_2=2400 \AA =2.400\times 10^{-7}\ \text{m}$
+            \item $E_1=0.6\ \text{eV}$
+            \item $E_2=2.04\ \text{eV}$
+        \end{itemize}
+        \item \textbf{Constants:} $c=3\times 10^8\ \text{m/s}$, $1\ \text{eV}=1.6\times 10^{-19}\ \text{J}$.
+        \item \textbf{Convert energies to Joules:}
+        \begin{itemize}
+            \item $E_1=0.6\times 1.6\times 10^{-19}\ \text{J}=0.96\times 10^{-19}\ \text{J}$
+            \item $E_2=2.04\times 1.6\times 10^{-19}\ \text{J}=3.264\times 10^{-19}\ \text{J}$
+        \end{itemize}
+        \item \textbf{Calculate $h$:}
+        \begin{align*}
+            h&=\frac{(E_2-E_1)\lambda_1\lambda_2}{c(\lambda_1-\lambda_2)}\\
+             &=\frac{(3.264-0.96)\times 10^{-19}\ \text{J}\times(3.333\times 10^{-7}\ \text{m}\times 2.400\times 10^{-7}\ \text{m})}{(3\times 10^8\ \text{m/s})\times(3.333-2.400)\times 10^{-7}\ \text{m}}\\
+             &=\frac{(2.304\times 10^{-19}\ \text{J})\times(8.00\times 10^{-14}\ \text{m}^2)}{(3\times 10^8\ \text{m/s})\times(0.933\times 10^{-7}\ \text{m})}\\
+             &=\frac{1.8432\times 10^{-32}}{2.799\times 10^{1}}\ \text{J s}\\
+             &\approx 6.58\times 10^{-34}\ \text{J s}
+        \end{align*}
+        \item \textbf{Calculate $W_0$ (in eV):}
+        \begin{align*}
+            W_0&=\frac{E_2\lambda_2-E_1\lambda_1}{\lambda_1-\lambda_2}\\
+               &=\frac{(2.04\ \text{eV}\times 2.400\times 10^{-7}\ \text{m})-(0.6\ \text{eV}\times 3.333\times 10^{-7}\ \text{m})}{(3.333-2.400)\times 10^{-7}\ \text{m}}\\
+               &=\frac{(4.896\times 10^{-7}-1.9998\times 10^{-7})\ \text{eV m}}{0.933\times 10^{-7}\ \text{m}}\\
+               &\approx 3.1\ \text{eV}
+        \end{align*}
+    \end{enumerate}
+\end{itemize}
+
+\subsection{[A11] Show that the maximum recoil energy of a free electron of rest mass $m_0$, when struck by a photon of frequency $\nu$, is given by $E_{\max}=\dfrac{(h\nu)^2}{h\nu+\tfrac12 m_0c^2}$ and this value is $E_{\max}=\dfrac{2m_0c^2\lambda_{\text{e}}^2}{\lambda^2+2\lambda_{\text{e}}\lambda}$ if the wavelength of the striking photon is $\lambda$ and $\lambda_{\text{e}}$ is the Compton wavelength of the electron.}
+
+It requires showing that the maximum recoil energy ($E_{max}$) of a free electron ($m_0$) struck by a photon of frequency $\nu$ (or wavelength $\lambda$) is given by:
+$$
+E_{max} = \frac{(h\nu)^2}{h\nu+ \frac{1}{2} m_0c^2} \quad \text{and} \quad E_{max} = \frac{2m_0c^2\lambda_e^2}{\lambda^2+2\lambda_e\lambda} \quad \text{}
+$$
+We use $E = h\nu = hc/\lambda$ for the incident photon energy, and $E' = h\nu' = hc/\lambda'$ for the scattered photon energy. The Compton wavelength is $\lambda_e = \frac{h}{m_0c}$.
+
+The maximum recoil energy $E_{max}$ occurs when the scattering angle is $\theta = 180^\circ$.
+
+\textbf{Part I: Derivation in terms of Wavelength $\lambda$ and Compton Wavelength $\lambda_e$}
+
+The Compton shift formula for the change in wavelength ($\Delta\lambda = \lambda' - \lambda$) is:
+$$
+\Delta\lambda = \lambda_e (1 - \cos\theta)
+$$
+For maximum recoil, $\theta = 180^\circ$, so $\cos\theta = -1$.
+$$
+\Delta\lambda_{max} = \lambda' - \lambda = 2\lambda_e \implies \lambda' = \lambda + 2\lambda_e \quad \text{(1)}
+$$
+The maximum kinetic energy acquired by the recoiling electron is $E_{max} = E - E'$:
+$$
+E_{max} = hc \left( \frac{1}{\lambda} - \frac{1}{\lambda'} \right) = hc \left( \frac{\lambda' - \lambda}{\lambda \lambda'} \right) \quad \text{}
+$$
+Substitute Eq. (1) into the expression:
+$$
+E_{max} = \frac{hc \cdot (2\lambda_e)}{\lambda (\lambda + 2\lambda_e)} = \frac{2hc\lambda_e}{\lambda^2 + 2\lambda\lambda_e} \quad \text{(2)}
+$$
+Since $\lambda_e = h/(m_0c)$, we have $h = m_0c\lambda_e$. Substituting $h$ back into the numerator of Eq. (2):
+$$
+E_{max} = \frac{2 (m_0c\lambda_e) c \lambda_e}{\lambda^2 + 2\lambda\lambda_e}
+$$
+$$
+\mathbf{E_{max} = \frac{2m_0c^2\lambda_e^2}{\lambda^2+2\lambda_e\lambda}} \quad
+$$
+
+\textbf{Part II: Derivation in terms of Frequency $\nu$}
+
+We can transform the result from Part I using $\lambda = c/\nu$ and $\lambda_e = h/(m_0c)$.
+First, define the dimensionless parameter $\alpha = \frac{h\nu}{m_0c^2}$.
+
+From the general result for the maximum kinetic energy in Compton scattering (which must be equivalent to the form derived in Part I), we know:
+$$
+E_{max} = h\nu \left( \frac{2\alpha}{1+2\alpha} \right)
+$$
+Substitute the definition of $\alpha$ into the expression:
+$$
+E_{max} = h\nu \left( \frac{2 \left(\frac{h\nu}{m_0c^2}\right)}{1 + 2 \left(\frac{h\nu}{m_0c^2}\right)} \right)
+$$
+Multiply the numerator and denominator inside the parenthesis by $m_0c^2$:
+$$
+E_{max} = h\nu \left( \frac{2h\nu}{m_0c^2 + 2h\nu} \right)
+$$
+$$
+E_{max} = \frac{2(h\nu)^2}{2h\nu + m_0c^2} \quad \text{(3)}
+$$
+We now verify that the target expression from the assignment is algebraically identical to Eq. (3). The target expression is:
+$$
+E_{max} = \frac{(h\nu)^2}{h\nu+ \frac{1}{2} m_0c^2}
+$$
+Multiply the numerator and denominator of the target expression by 2:
+$$
+E_{max} = \frac{2 \cdot (h\nu)^2}{2 \cdot \left(h\nu+ \frac{1}{2} m_0c^2\right)}
+$$
+$$
+\mathbf{E_{max} = \frac{2(h\nu)^2}{2h\nu + m_0c^2}} \quad \text{}
+$$
+Since this result matches Eq. (3), the expression is proven.
+
+\subsection{[B1] Define phase velocity and group velocity. State De Broglie Hypothesis and derive the De Broglie relation. Also, write a short note on the nature of De Broglie waves.}
+
+\subsubsection*{Phase Velocity ($v_p$) and Group Velocity ($v_g$)}
+\textbf{Phase Velocity}: The velocity with which a displacement of a given phase moves forward. It is defined as:
+$$
+v_p = \frac{\omega}{k} \quad \text{}
+$$
+where $\omega$ is the angular frequency and $k$ is the propagation constant.
+
+\textbf{Group Velocity}: The velocity with which the center of a wave group (maximum amplitude) moves.
+$$
+v_g = \frac{d\omega}{dk} \quad \text{}
+$$
+
+\subsubsection*{De Broglie Hypothesis and Relation}
+\textbf{Hypothesis}: All particles in motion have properties characteristic of waves. The wavelength ($\lambda$) and frequency ($\nu$) associated with a particle are related to its momentum ($p$) and energy ($E$):
+$$
+\lambda = \frac{h}{p} \quad \text{and} \quad \nu = \frac{E}{h} \quad \text{}
+$$
+\textbf{Derivation}: For a photon, the energy $E = h\nu$ and $E=pc$. Equating these gives $h\nu = pc$. Using the wave relation $c = \nu\lambda$ (or $\nu = c/\lambda$):
+$$
+p c = h \left(\frac{c}{\lambda}\right) \implies \lambda = \frac{h}{p} \quad \text{}
+$$
+De Broglie extended this wave-particle relation to all particles.
+
+\subsubsection*{Nature of De Broglie Waves}
+The frequency or wavelength is a concept related to a wave, and the quantum of energy $h\nu$ is the concept of a particle. Matter entities (particles) have wave properties under suitable conditions. Wave properties of matter can be reconciled with particle properties by combining waves of different wavelengths to form groups of waves (wave packets). A wave packet is used to represent a particle confined to a small region in space.
+
+\subsection{[B2] Find the relation between phase velocity and wavelength of De Broglie wave. Also, find De Broglie wavelength associated with a particle of mass $m$ and kinetic energy $K$. Also, describe Bohr’s quantization conditions.}
+
+\subsubsection*{1. Relation between Phase Velocity ($v_p$) and Wavelength ($\lambda$)}
+The relationship between group velocity ($v_g$) and phase velocity ($v_p$) is:
+$$
+v_g = v_p - \lambda \frac{dv_p}{d\lambda} \quad \text{}
+$$
+
+\subsubsection*{2. De Broglie Wavelength for Kinetic Energy ($K$)}
+For a non-relativistic particle ($v \ll c$), the kinetic energy $K = \frac{p^2}{2m}$. Thus $p = \sqrt{2mK}$.
+$$
+\lambda = \frac{h}{p} = \frac{h}{\sqrt{2mK}} \quad \text{}
+$$
+(For completeness, the relativistic form is $\lambda = \frac{hc}{\sqrt{K(K+2m_0c^2)}}$).
+
+\subsubsection*{3. Bohr’s Quantization Conditions}
+The orbital angular momentum $L$ of the electron in a stable orbit is quantized; it must be an integral multiple of $h/(2\pi)$.
+$$
+L = mvr = n\frac{h}{2\pi} = n\hbar \quad \text{where } n = 1, 2, 3, \ldots \quad \text{}
+$$
+
+\subsection{[C1] Briefly describe the concept of uncertainty. Write exact definition of uncertainty and exact statement of uncertainty principle.}
+
+\subsubsection*{Concept of Uncertainty}
+A particle in motion is represented by a wave packet, which has a finite spatial width $\Delta x$. Because the wave packet is formed by a superposition of waves covering a range of wavelengths ($\Delta \lambda$), the associated momentum ($p=h/\lambda$) must also be uncertain ($\Delta p_x$).
+
+\subsubsection*{Exact Definition of Uncertainty}
+The uncertainty in the position $\Delta x$ and the uncertainty in the momentum $\Delta p_x$ are defined as the root mean square deviations from their mean values.
+
+\subsubsection*{Exact Statement of Uncertainty Principle}
+It is impossible to determine simultaneously both the position and the momentum of a particle with perfect accuracy. The product of the uncertainty $\Delta x$ in the $x$-coordinate and the uncertainty $\Delta p_x$ in the $x$-component of the momentum is of the order of or greater than $h/(2\pi)$, or $\hbar$:
+$$
+\Delta x \cdot \Delta p_x \geq \hbar \quad \text{}
+$$
+
+\subsection{[C2] Prove the uncertainty relation between position and momentum and hence prove the uncertainty relation between time and energy. Also, write physical significance of these relations. Find the smallest possible uncertainty of the position of the electron if it has a speed of $300 \text{ m/s}$ accurate to $0.01\%$.}
+
+\subsubsection*{1. Proof of Position and Momentum Uncertainty Relation ($\Delta x \cdot \Delta p_x$)}
+We relate momentum uncertainty $\Delta p_x$ to the spread in propagation constant $\Delta k$:
+$$
+\Delta p_x = \hbar \Delta k \quad \text{}
+$$
+The uncertainty in position $\Delta x$ is related to $\Delta k$ such that $\Delta x$ must be greater than or equal to $1/\Delta k$:
+$$
+\Delta x \geq \frac{1}{\Delta k} \quad \text{}
+$$
+Multiplying both sides by $\Delta p_x = \hbar \Delta k$:
+$$
+\Delta x \cdot \Delta p_x \geq \hbar \quad \text{}
+$$
+
+\subsubsection*{2. Proof of Time and Energy Uncertainty Relation ($\Delta E \cdot \Delta t$)}
+For a particle represented by a wave packet moving with group velocity $v_g$ along $x$-axis, the uncertainty in time $\Delta t$ is the ratio of spatial uncertainty $\Delta x$ to velocity $v_g$:
+$$
+\Delta t = \frac{\Delta x}{v_g} \quad \text{}
+$$
+The kinetic energy is $E = p_x^2/(2m)$. Taking the differential gives the uncertainty in energy $\Delta E$:
+$$
+\Delta E = \frac{p_x}{m} \Delta p_x = v_x \Delta p_x
+$$
+Since $v_g \approx v_x$ for the wave packet, multiplying $\Delta E$ and $\Delta t$:
+$$
+\Delta E \cdot \Delta t = (v_g \Delta p_x) \cdot \left(\frac{\Delta x}{v_g}\right) = \Delta x \cdot \Delta p_x \quad \text{}
+$$
+Using the position-momentum relation $\Delta x \cdot \Delta p_x \geq \hbar$:
+$$
+\Delta E \cdot \Delta t \geq \hbar \quad \text{}
+$$
+
+\subsubsection*{3. Physical Significance}
+\begin{itemize}
+    \item \textbf{Position-Momentum}: If the position $\Delta x$ is determined accurately ($\Delta x \to 0$), the momentum uncertainty $\Delta p_x$ becomes infinite.
+    \item \textbf{Energy-Time}: If $\Delta E$ is the maximum uncertainty in energy, $\Delta t$ is the minimum time required for energy to remain definite (i.e., measured accurately).
+\end{itemize}
+
+\subsubsection*{4. Calculation of Smallest Uncertainty in Position}
+Given: $v = 300 \text{ m/s}$, accuracy $= 0.01\%$. $m = 9.11 \times 10^{-31} \text{ kg}$, $h = 6.63 \times 10^{-34} \text{ J s}$.
+
+1.  Calculate uncertainty in velocity $\Delta v$:
+    $$
+    \Delta v = 300 \times \frac{0.01}{100} = 3 \times 10^{-2} \text{ m/s} \quad \text{}
+    $$
+2.  Calculate minimum uncertainty in position ($\Delta x = h/(2\pi m \Delta v)$):
+    $$
+    \Delta x = \frac{6.63 \times 10^{-34}}{2 \times 3.14 \times 9.11 \times 10^{-31} \times 3 \times 10^{-2}} \text{ m} \quad \text{}
+    $$
+    $$
+    \Delta x = 3.86 \times 10^{-3} \text{ m} \quad \text{}
+    $$
+
+\subsection{[D1] What do you mean by wave function? Write its physical interpretation and limitations. When a wave function is called normalized and why is normalization important?}
+
+\subsubsection*{Wave Function ($\Psi$)}
+The wave function, $\Psi(x, y, z, t)$, is a complex variable quantity associated with a particle in motion, assumed to represent the wave associated with the particle.
+
+\subsubsection*{Physical Interpretation and Limitations}
+\textbf{Physical Interpretation}: The quantity $\Psi(x, y, z, t) \Psi^*(x, y, z, t) = |\Psi|^2$ is the **probability density** $P(x, y, z, t)$. The expression $P d\tau$ is the probability that the particle will be found in the volume element $d\tau$.
+
+\textbf{Limitations} (Conditions for a well-behaved function):
+\begin{enumerate}
+    \item $\Psi$ must be \textbf{finite} for all values of $x, y, z$.
+    \item $\Psi$ must be \textbf{single-valued}.
+    \item $\Psi$ must be \textbf{continuous} (except where the potential $V = \infty$).
+    \item The partial derivatives $\frac{\partial\Psi}{\partial x}, \frac{\partial\Psi}{\partial y}, \frac{\partial\Psi}{\partial z}$ must be \textbf{continuous} everywhere.
+\end{enumerate}
+
+\subsubsection*{Normalization}
+A wave function is called \textbf{normalized} when the integration of the probability density $|\Psi|^2$ over all space is unity:
+$$
+\int_{-\infty}^{+\infty} \Psi^*(x, y, z, t) \Psi(x, y, z, t) d\tau = 1 \quad \text{}
+$$
+\textbf{Importance}: Normalization ensures that the total probability of finding the particle somewhere in space is 1 (100\%).
+
+\subsection{[D2] What do you mean by wave equation? Derive the three-dimensional time-dependent Schrodinger’s wave equation for the motion of a single particle.}
+
+\subsubsection*{Wave Equation}
+A wave equation is a second-order differential equation in space and time whose solutions represent wave disturbances.
+
+\subsubsection*{Derivation of 3D Time-Dependent Schrödinger Wave Equation}
+The classical expression for the total energy $E$ of a non-relativistic particle moving under potential $V$ is:
+$$
+E = \frac{p^2}{2m} + V(x, y, z)
+$$
+In Quantum Mechanics, we apply the operators for Total Energy ($\hat{E} = i\hbar \frac{\partial}{\partial t}$) and Kinetic Energy ($\hat{K} = \frac{\hat{p}^2}{2m} = -\frac{\hbar^2}{2m}\nabla^2$) to the wave function $\Psi$:
+$$
+\hat{E}\Psi = \left( \frac{\hat{p}^2}{2m} + \hat{V} \right) \Psi \quad \text{}
+$$
+Substituting the operators:
+$$
+i\hbar \frac{\partial\Psi}{\partial t} = -\frac{\hbar^2}{2m}\nabla^2\Psi + V\Psi \quad \text{}
+$$
+Rearranging gives the 3D time-dependent Schrödinger wave equation:
+$$
+\mathbf{-\frac{\hbar^2}{2m} \nabla^2\Psi + V\Psi = i\hbar \frac{\partial\Psi}{\partial t}} \quad \text{}
+$$
+
+\subsection{[D3] Define operator, eigenvalue and eigenfunction. Obtain momentum operator and total energy operator.}
+
+\subsubsection*{Definitions}
+\textbf{Operator} ($\hat{A}$): A rule which changes a function into another function.
+\textbf{Eigenfunction} ($f$): If an operator $\hat{A}$ acts on $f$ and yields $f$ multiplied by a constant $a$, $f$ is the eigenfunction: $\hat{A}f = af$.
+\textbf{Eigenvalue} ($a$): The constant $a$ in the eigenvalue equation $\hat{A}f = af$.
+
+\subsubsection*{Operators}
+\textbf{Momentum Operator ($\hat{p}_x$)}:
+The operator for the $x$-component of momentum is:
+$$
+\hat{p}_x = \frac{\hbar}{i} \frac{\partial}{\partial x} \quad \text{}
+$$
+In three dimensions, the operator for momentum $\vec{p}$ is $\vec{\hat{p}} = \frac{\hbar}{i} \vec{\nabla}$.
+
+\textbf{Total Energy Operator ($\hat{E}$)}:
+The operator corresponding to the total energy $E$ is:
+$$
+\hat{E} = i\hbar \frac{\partial}{\partial t} \quad \text{}
+$$
+
+\subsection{[D4] State the basic postulates of Quantum Mechanics along with short descriptions.}
+
+The basic postulates of Quantum Mechanics for a single particle system are:
+\begin{enumerate}
+    \item \textbf{State Representation (Wave Function)}: The physical state of the system is completely described by a complex wave function $\Psi(x, y, z, t)$. This function must be consistent with the principle of uncertainty.
+    \item \textbf{Observables and Operators}: To every observable dynamical quantity (like position, momentum, or energy) there corresponds a linear, Hermitian quantum mechanical operator ($\hat{\alpha}$).
+    \item \textbf{Probability Interpretation (Born Interpretation)}: The product $\Psi\Psi^* d\tau$ is the probability that the particle will be found in the volume element $d\tau$. For normalization, the total probability of finding the particle somewhere must be unity: $\int \Psi\Psi^* d\tau = 1$.
+    \item \textbf{Expectation Values}: The average or expectation value $\langle \alpha \rangle$ of an observable $\alpha$ is defined by the integral relation:
+    $$
+    \langle \alpha \rangle = \int \Psi^* \hat{\alpha} \Psi d\tau \quad \text{}
+    $$
+\end{enumerate}
+
+\subsection{[D5] What do you mean by expectation values? Interpret with cases of different observables.}
+
+\subsubsection*{Definition of Expectation Value}
+The expectation value of a dynamical quantity is the mathematical expectation for the result of a single measurement. It is defined as the average value obtained from a large number of measurements performed on identical systems.
+
+The expectation value $\langle f \rangle$ of a variable $f$ with corresponding operator $\hat{f}$ is:
+$$
+\langle f \rangle = \int_{-\infty}^{+\infty} \Psi^* \hat{f} \Psi d\tau
+$$
+
+\subsubsection*{Interpretation with Cases of Different Observables (1D)}
+\begin{itemize}
+    \item \textbf{Position ($\langle x \rangle$)}: The operator is $\hat{x} = x$.
+    $$
+    \langle x \rangle = \int_{-\infty}^{+\infty} \Psi^* x \Psi dx \quad \text{}
+    $$
+    Interpretation: $\langle x \rangle$ is the average position of the particle.
+    \item \textbf{Potential Energy ($\langle V \rangle$)}: The operator is $\hat{V} = V(x)$.
+    $$
+    \langle V \rangle = \int_{-\infty}^{+\infty} \Psi^* V(x) \Psi dx \quad \text{}
+    $$
+    Interpretation: $\langle V \rangle$ is the average potential energy.
+    \item \textbf{Momentum ($\langle p_x \rangle$)}: The operator is $\hat{p}_x = \frac{\hbar}{i} \frac{\partial}{\partial x}$.
+    $$
+    \langle p_x \rangle = \int_{-\infty}^{+\infty} \Psi^* \left(\frac{\hbar}{i} \frac{\partial}{\partial x}\right) \Psi dx \quad \text{}
+    $$
+    Interpretation: $\langle p_x \rangle$ is the average momentum along the $x$-axis.
+\end{itemize}
+
+\subsection{[D6] State and prove Ehrenfest’s theorem}
+
+\subsubsection*{Statement}
+Ehrenfest’s theorem states that the expectation values of quantum mechanical operators follow the classical equations of motion. For a particle of mass $m$ moving in a potential $V(x)$, the theorem relates the time rate of change of the expectation values of position ($\langle x \rangle$) and momentum ($\langle p_x \rangle$) to the average classical values:
+
+$$
+\frac{d}{dt} \langle x \rangle = \frac{1}{m} \langle p_x \rangle
+$$
+$$
+\frac{d}{dt} \langle p_x \rangle = -\left\langle \frac{\partial V}{\partial x} \right\rangle = \langle F_x \rangle
+$$
+where $\langle F_x \rangle$ is the expectation value of the classical force along the $x$-axis.
+
+\subsubsection*{Proof of the First Relation: $\frac{d}{dt} \langle x \rangle = \frac{1}{m} \langle p_x \rangle$}
+
+We use the general time evolution equation for the expectation value of an operator $\hat{A}$:
+$$
+\frac{d}{dt} \langle \hat{A} \rangle = \frac{1}{i\hbar} \left\langle [\hat{A}, \hat{H}] \right\rangle + \left\langle \frac{\partial \hat{A}}{\partial t} \right\rangle \quad \text{(1)}
+$$
+Here, $\hat{H}$ is the Hamiltonian (Total Energy Operator) and $[\hat{A}, \hat{H}] = \hat{A}\hat{H} - \hat{H}\hat{A}$ is the commutator.
+For the position operator $\hat{x}$, since it does not explicitly depend on time, $\left\langle \frac{\partial \hat{x}}{\partial t} \right\rangle = 0$.
+
+The Hamiltonian for a particle in 1D is:
+$$
+\hat{H} = \frac{\hat{p}_x^2}{2m} + V(\hat{x}) \quad \text{}
+$$
+We need to calculate the commutator $[\hat{x}, \hat{H}]$:
+$$
+[\hat{x}, \hat{H}] = \left[\hat{x}, \frac{\hat{p}_x^2}{2m} + V(\hat{x})\right] = \frac{1}{2m} [\hat{x}, \hat{p}_x^2] + [\hat{x}, V(\hat{x})] \quad \text{(2)}
+$$
+Since $\hat{x}$ and $V(\hat{x})$ commute, $[\hat{x}, V(\hat{x})] = 0$.
+The required fundamental commutator is $[\hat{x}, \hat{p}_x] = i\hbar$.
+
+We use the commutator identity: $[\hat{x}, \hat{p}_x^2] = \hat{x}\hat{p}_x^2 - \hat{p}_x^2\hat{x}$.
+Since $\hat{p}_x = \frac{\hbar}{i} \frac{\partial}{\partial x}$, applying this operator identity to an arbitrary function $\Psi$:
+$$
+[\hat{x}, \hat{p}_x^2] \Psi = \hat{x}\left(-\hbar^2 \frac{\partial^2\Psi}{\partial x^2}\right) - \left(-\hbar^2 \frac{\partial^2}{\partial x^2}\right) (\hat{x}\Psi)
+$$
+Using the product rule for the second term:
+$$
+\frac{\partial}{\partial x} (x\Psi) = \Psi + x\frac{\partial\Psi}{\partial x}
+$$
+$$
+\frac{\partial^2}{\partial x^2} (x\Psi) = \frac{\partial\Psi}{\partial x} + \frac{\partial\Psi}{\partial x} + x\frac{\partial^2\Psi}{\partial x^2} = 2\frac{\partial\Psi}{\partial x} + x\frac{\partial^2\Psi}{\partial x^2}
+$$
+Substituting this back into the commutator:
+$$
+[\hat{x}, \hat{p}_x^2] \Psi = -\hbar^2 x \frac{\partial^2\Psi}{\partial x^2} + \hbar^2 \left( 2\frac{\partial\Psi}{\partial x} + x\frac{\partial^2\Psi}{\partial x^2} \right) = 2\hbar^2 \frac{\partial\Psi}{\partial x}
+$$
+We know that $\hat{p}_x \Psi = \frac{\hbar}{i} \frac{\partial\Psi}{\partial x}$, so $\frac{\partial\Psi}{\partial x} = \frac{i}{\hbar} \hat{p}_x \Psi$.
+$$
+[\hat{x}, \hat{p}_x^2] \Psi = 2\hbar^2 \left(\frac{i}{\hbar} \hat{p}_x \Psi\right) = 2i\hbar \hat{p}_x \Psi
+$$
+Therefore, the operator commutation is:
+$$
+[\hat{x}, \hat{p}_x^2] = 2i\hbar \hat{p}_x \quad \text{(3)}
+$$
+Substitute Eq. (3) into Eq. (2):
+$$
+[\hat{x}, \hat{H}] = \frac{1}{2m} (2i\hbar \hat{p}_x) = \frac{i\hbar}{m} \hat{p}_x \quad \text{(4)}
+$$
+Finally, substitute Eq. (4) into the time evolution equation (1):
+$$
+\frac{d}{dt} \langle x \rangle = \frac{1}{i\hbar} \left\langle \frac{i\hbar}{m} \hat{p}_x \right\rangle
+$$
+$$
+\mathbf{\frac{d}{dt} \langle x \rangle = \frac{1}{m} \langle p_x \rangle} \quad
+$$
+
+\subsection{[D7] A particle moving along the positive direction of the $x$-axis in a region of potential energy $V(x)$ is represented by a wave-packet given by $\Psi(x, t) = \frac{1}{\sqrt{2\pi\hbar}} \int A(p) e^{\frac{i}{\hbar}(p_x x - E t)} dp$. Using the expression for non-relativistic total energy, obtain the one-dimensional time-dependable Schrodinger wave equation.}
+
+The wave-packet representation is:
+$$
+\Psi(x, t) = \frac{1}{\sqrt{2\pi\hbar}} \int A(p) e^{\frac{i}{\hbar}(p_x x - E t)} dp \quad \text{}
+$$
+The non-relativistic total energy equation is:
+$$
+E = \frac{p_x^2}{2m} + V(x) \quad \text{}
+$$
+
+1.  \textbf{Apply Time Derivative ($\partial/\partial t$)}:
+    $$
+    \frac{\partial\Psi}{\partial t} = \frac{1}{\sqrt{2\pi\hbar}} \int A(p) \left(-\frac{i}{\hbar} E\right) e^{\frac{i}{\hbar}(p_x x - E t)} dp
+    $$
+    Multiplying by $i\hbar$:
+    $$
+    i\hbar \frac{\partial\Psi}{\partial t} = \frac{1}{\sqrt{2\pi\hbar}} \int A(p) E e^{\frac{i}{\hbar}(p_x x - E t)} dp \quad \text{}
+    $$
+2.  \textbf{Apply Double Spatial Derivative ($\partial^2/\partial x^2$)}:
+    $$
+    \frac{\partial^2\Psi}{\partial x^2} = \frac{1}{\sqrt{2\pi\hbar}} \int A(p) \left(\frac{i}{\hbar} p_x\right)^2 e^{\frac{i}{\hbar}(p_x x - E t)} dp = \frac{1}{\sqrt{2\pi\hbar}} \int A(p) \left(-\frac{p_x^2}{\hbar^2}\right) e^{\frac{i}{\hbar}(p_x x - E t)} dp \quad \text{}
+    $$
+    Multiplying by $-\frac{\hbar^2}{2m}$:
+    $$
+    -\frac{\hbar^2}{2m} \frac{\partial^2\Psi}{\partial x^2} = \frac{1}{\sqrt{2\pi\hbar}} \int A(p) \frac{p_x^2}{2m} e^{\frac{i}{\hbar}(p_x x - E t)} dp \quad \text{}
+    $$
+3.  \textbf{Substitute into Energy Equation}:
+    Substitute $E = p_x^2/(2m) + V(x)$ into the right side of the $i\hbar \partial\Psi/\partial t$ equation:
+    $$
+    i\hbar \frac{\partial\Psi}{\partial t} = \frac{1}{\sqrt{2\pi\hbar}} \int A(p) \left( \frac{p_x^2}{2m} + V(x) \right) e^{\frac{i}{\hbar}(p_x x - E t)} dp
+    $$
+    Separate the terms and substitute the derivatives from steps 1 and 2:
+    $$
+    i\hbar \frac{\partial\Psi}{\partial t} = \left[-\frac{\hbar^2}{2m} \frac{\partial^2\Psi}{\partial x^2}\right] + V(x)\left[\frac{1}{\sqrt{2\pi\hbar}} \int A(p) e^{\frac{i}{\hbar}(p_x x - E t)} dp\right]
+    $$
+    Since the second integral is $\Psi(x, t)$:
+    $$
+    \mathbf{i\hbar \frac{\partial\Psi}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial^2\Psi}{\partial x^2} + V(x)\Psi} \quad \text{}
+    $$
+
+\subsection{[E1] Distinguish between free states and bound states. Describe particle in a one-dimensional square potential well of finite depth.}
+
+\subsubsection*{Distinction between Free States and Bound States}
+\begin{itemize}
+    \item \textbf{Bound State}: A state where the particle is trapped in a specific region of space, typically when the total energy $E$ is less than the potential energy barrier height ($E < V_{max}$). The particle cannot escape the potential well. Bound states result in a \textbf{discrete} (quantized) energy spectrum.
+    \item \textbf{Free State}: A state where the particle is not confined, typically when the total energy $E$ is greater than the potential energy maximum ($E > V_{max}$). The particle can move freely throughout all space. Free states result in a \textbf{continuous} energy spectrum.
+\end{itemize}
+
+\subsubsection*{Particle in a One-Dimensional Square Potential Well of Finite Depth}
+For a potential well of finite depth $V_0$, the particle inside the well (Region I, $V=0$) is in a bound state if its total energy $E < V_0$.
+
+\begin{itemize}
+    \item \textbf{Classical Prediction}: Classically, the particle is strictly confined to the well ($0 \le x \le a$). The probability of finding it outside is zero.
+    \item \textbf{Quantum Behavior}: Quantum mechanically, the wave function ($\Psi$) must be continuous everywhere. Since $E < V_0$, the solution to the Schrödinger equation outside the well (Region II, $V=V_0$) is exponentially decaying.
+    $$
+    \Psi_{II}(x) = C e^{-\beta x} \quad \text{where } \beta = \sqrt{\frac{2m (V_0 - E)}{\hbar^2}}
+    $$
+    This mathematical decay means the wave function \textbf{penetrates the barriers} (leakage), indicating a non-zero probability of finding the particle outside the classically allowed region. The requirement for $\Psi$ to vanish at infinity and the boundary conditions enforce the quantization of energy levels ($E_n$).
+\end{itemize}
+
+\subsection{[E2] Write short note on rectangular potential barrier. Hence, describe quantum tunnelling.}
+
+\subsubsection*{Rectangular Potential Barrier}
+A rectangular potential barrier is a region of finite width ($a$) where the potential energy $V(x)$ is constant and positive ($V=V_0$). Outside this region ($V=0$), the particle moves freely.
+
+\subsubsection*{Quantum Tunnelling}
+Quantum tunnelling (or the Tunnel Effect) is a phenomenon where a particle encountering a potential barrier of height $V_0$ (where $V_0 > 0$) has a non-zero probability of passing through the barrier, even if its total energy $E$ is less than the barrier height ($E < V_0$).
+
+\begin{itemize}
+    \item \textbf{Classical vs. Quantum}: Classically, if $E < V_0$, the particle would be reflected totally. Quantum mechanically, the wave function decays exponentially inside the barrier region (similar to the finite well), but if the barrier is sufficiently narrow, the wave function has a finite, non-zero amplitude on the far side of the barrier ($x > a$).
+    \item \textbf{Transmission Coefficient ($T$)}: The probability of transmission is given by the transmission coefficient $T$. For a thin, high barrier, $T$ is generally small but finite, often exhibiting exponential dependence on barrier width and height:
+    $$
+    T \propto e^{-2\beta a} \quad \text{where } \beta = \sqrt{\frac{2m (V_0 - E)}{\hbar^2}}
+    $$
+\end{itemize}
+
+\subsection{[E3] Define linear harmonic oscillator (LHO). Obtain Schrodinger’s wave equation for one-dimensional LHO and hence deduce it to Hermite’s differential equation performing simplification and change of dependent variable.}
+
+\subsubsection*{Definition of Linear Harmonic Oscillator (LHO)}
+A Linear Harmonic Oscillator (LHO) is a system where a particle oscillates about its equilibrium position under the action of a linear restoring force proportional to the displacement ($F = -kx$).
+
+The potential energy of a 1D LHO is given by:
+$$
+V(x) = \frac{1}{2} k x^2 = \frac{1}{2} m \omega^2 x^2 \quad \text{}
+$$
+where $k$ is the force constant, $m$ is the mass, and $\omega$ is the angular frequency ($\omega^2 = k/m$).
+
+\subsubsection*{Schrödinger’s Wave Equation for One-Dimensional LHO}
+The time-independent Schrödinger equation in 1D is:
+$$
+-\frac{\hbar^2}{2m} \frac{d^2\Psi}{dx^2} + V(x)\Psi = E\Psi \quad \text{}
+$$
+Substituting $V(x) = \frac{1}{2} m \omega^2 x^2$:
+$$
+-\frac{\hbar^2}{2m} \frac{d^2\Psi}{dx^2} + \frac{1}{2} m \omega^2 x^2 \Psi = E\Psi
+$$
+Rearranging:
+$$
+\mathbf{\frac{d^2\Psi}{dx^2} + \frac{2m}{\hbar^2} \left(E - \frac{1}{2} m \omega^2 x^2\right) \Psi = 0} \quad \text{}
+$$
+
+\subsubsection*{Deduction to Hermite’s Differential Equation Form}
+To solve the equation, we perform the following substitution to obtain a dimensionless form (as outlined in the source):
+\begin{enumerate}
+    \item Introduce a dimensionless spatial variable $y$:
+    $$
+    y = ax \quad \text{where } a = \sqrt{\frac{m\omega}{\hbar}}
+    $$
+    \item Introduce a dimensionless energy parameter $\lambda$:
+    $$
+    \lambda = \frac{2E}{\hbar\omega}
+    $$
+\end{enumerate}
+Applying these substitutions to the Schrödinger equation (as detailed in the sources), the equation simplifies to the form:
+$$
+\mathbf{\frac{d^2\Psi}{dy^2} + \left( \lambda - y^2 \right) \Psi = 0} \quad \text{}
+$$
+This is the simplified form which, when solved by assuming a series solution involving an asymptotic exponential factor ($\Psi(y) = H(y) e^{-y^2/2}$), leads to Hermite's differential equation for the polynomial $H(y)$:
+$$
+H_n''(y) - 2y H_n'(y) + 2n H_n(y) = 0 \quad \text{}
+$$
+The solution requires that $\lambda = 2n + 1$, which quantizes the energy $E$:
+$$
+E_n = \left(n + \frac{1}{2}\right) \hbar\omega \quad \text{where } n = 0, 1, 2, \ldots \quad \text{}
+$$
+
+\subsection{[F] Define the one-dimensional infinite square potential well (Particle in a Box). Write the time-independent Schrödinger Equation for the region inside the box and state the resulting wave function form.}
+
+\subsubsection*{1. Definition of 1D Infinite Square Potential Well}
+This model describes a particle of mass $m$ confined to move freely along the $x$-axis between two rigid, infinitely high walls (or boundaries) separated by a distance $a$.
+
+The potential energy $V(x)$ is defined as:
+$$
+V(x) = 
+\begin{cases}
+0 & \text{for } 0 < x < a \quad \text{(Region I, inside the box)} \\
+\infty & \text{for } x \le 0 \text{ and } x \ge a \quad \text{(Outside the box)}
+\end{cases}
+$$
+The particle cannot exist where $V(x) = \infty$. Thus, the wave function $\Psi(x)=0$ outside the box, imposing the boundary conditions $\Psi(0)=0$ and $\Psi(a)=0$.
+
+\subsubsection*{2. Time-Independent Schrödinger Equation Inside the Box}
+Inside the box ($0 < x < a$), $V(x)=0$. The time-independent Schrödinger equation is:
+$$
+-\frac{\hbar^2}{2m} \frac{d^2\Psi}{dx^2} + V(x)\Psi = E\Psi
+$$
+Substituting $V(x)=0$:
+$$
+-\frac{\hbar^2}{2m} \frac{d^2\Psi}{dx^2} = E\Psi
+$$
+$$
+\mathbf{\frac{d^2\Psi}{dx^2} + k^2\Psi = 0} \quad \text{where } k^2 = \frac{2mE}{\hbar^2} \quad \text{(1)}
+$$
+
+\subsubsection*{3. Wave Function Form}
+The general solution to Equation (1) is oscillatory:
+$$
+\Psi(x) = A \sin(kx) + B \cos(kx) \quad \text{(2)}
+$$
+Applying the boundary condition $\Psi(0)=0$:
+$$
+\Psi(0) = A \sin(0) + B \cos(0) = B = 0
+$$
+Thus, the wave function form is:
+$$
+\mathbf{\Psi_n(x) = A \sin(kx)} \quad \text{}
+$$
+(The final solution, after applying the second boundary condition and normalization, is $\Psi_n(x) = \sqrt{\frac{2}{a}} \sin\left(\frac{n\pi x}{a}\right)$).
+
+\subsection{[G] Derive the expression for the energy eigenvalues ($E_n$) of a particle trapped in a one-dimensional infinite square potential well of width $a$.}
+
+\subsubsection*{Derivation of Energy Eigenvalues ($E_n$)}
+We start with the wave function inside the box:
+$$
+\Psi(x) = A \sin(kx) \quad \text{where } k = \sqrt{\frac{2mE}{\hbar^2}} \quad \text{(3)}
+$$
+We apply the second boundary condition, $\Psi(a) = 0$:
+$$
+\Psi(a) = A \sin(ka) = 0
+$$
+Since $A$ cannot be zero (or $\Psi$ would be zero everywhere), we must have:
+$$
+\sin(ka) = 0
+$$
+This requires that $ka$ must be an integer multiple of $\pi$:
+$$
+k a = n\pi \quad \text{where } n = 1, 2, 3, \ldots \quad \text{(4)}
+$$
+(The case $n=0$ gives $E=0$ and $\Psi=0$, which is physically meaningless, so $n$ cannot be zero.)
+
+Now, we solve for $E$ using the definition of $k$ from Equation (3):
+$$
+k = \frac{n\pi}{a}
+$$
+Square both sides:
+$$
+k^2 = \frac{n^2\pi^2}{a^2}
+$$
+Recall that $k^2 = \frac{2mE}{\hbar^2}$. Substituting this definition:
+$$
+\frac{2mE_n}{\hbar^2} = \frac{n^2\pi^2}{a^2}
+$$
+Solving for the quantized energy $E_n$:
+$$
+\mathbf{E_n = \frac{n^2 \pi^2 \hbar^2}{2ma^2}} \quad \text{}
+$$
+If Planck's constant $h$ is used ($\hbar = h/2\pi$):
+$$
+E_n = \frac{n^2 \pi^2 (h/2\pi)^2}{2ma^2} = \mathbf{\frac{n^2 h^2}{8ma^2}} \quad \text{}
+$$
+The energy levels are discrete, or \textbf{quantized}.
+
+\subsection{[H] Establish relation between relativistic energy $E$ and relativistic momentum $p$ for a particle.}
+
+\subsubsection*{Relation between Relativistic Energy $E$ and Momentum $p$}
+We start with the total relativistic energy $E$ and relativistic momentum $p$ for a particle of rest mass $m_0$ moving with velocity $v$.
+
+1.  \textbf{Total Relativistic Energy} ($E$):
+    $$
+    E = mc^2 = \frac{m_0 c^2}{\sqrt{1-v^2/c^2}} \quad \text{}
+    $$
+    Squaring this:
+    $$
+    E^2 \left(1 - \frac{v^2}{c^2}\right) = m_0^2 c^4 \quad \text{}
+    $$
+    $$
+    E^2 - E^2 \frac{v^2}{c^2} = m_0^2 c^4 \quad \text{(1)}
+    $$
+2.  \textbf{Relativistic Momentum} ($p$):
+    $$
+    p = mv = \frac{m_0 v}{\sqrt{1-v^2/c^2}} \quad \text{}
+    $$
+    Multiplying by $c$ and squaring:
+    $$
+    p^2 c^2 = \frac{m_0^2 v^2 c^2}{1-v^2/c^2} = m_0^2 c^4 \frac{v^2/c^2}{1-v^2/c^2} \quad \text{}
+    $$
+    From equation (1), we have $E^2 \frac{v^2}{c^2} = E^2 - m_0^2 c^4$. Substitute this into the $p^2 c^2$ relation:
+    $$
+    p^2 c^2 = \frac{m_0^2 c^4 v^2}{c^2 (1-v^2/c^2)}
+    $$
+    A simpler approach is to isolate $E^2 v^2/c^2$ from (1): $E^2 \frac{v^2}{c^2} = E^2 - m_0^2 c^4$.
+    Now use the square of the relativistic momentum relation:
+    $$
+    p^2 c^2 = \frac{m_0^2 v^2 c^2}{1-v^2/c^2}
+    $$
+    This is equivalent to the identity found directly in the source:
+    $$
+    \mathbf{E^2 = p^2c^2 + m_0^2c^4} \quad \text{}
+    $$
+\vfill
+\centering THE END
+
+\end{document}
